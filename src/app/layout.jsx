@@ -13,6 +13,12 @@ export const viewport = {
 };
 
 export const metadata = {
+    title:  {
+        default: "Sân Pickleball",
+        template: "%s | Sân Pickleball",
+    }, 
+    description:
+      "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
     metadataBase: new URL("https://sanpickleball.com"),
     openGraph: {
         siteName: "Sân Pickleball",
@@ -36,14 +42,14 @@ export const metadata = {
         statusBarStyle: "default",
         capable: true
     },
-    verification: {
-        google: "YOUR_DATA",
-        yandex: ["YOUR_DATA"],
-        other: {
-            "msvalidate.01": ["YOUR_DATA"],
-            "facebook-domain-verification": ["YOUR_DATA"]
-        }
-    },
+    // verification: {
+    //     google: "YOUR_DATA",
+    //     yandex: ["YOUR_DATA"],
+    //     other: {
+    //         "msvalidate.01": ["YOUR_DATA"],
+    //         "facebook-domain-verification": ["YOUR_DATA"]
+    //     }
+    // },
     icons: {
         icon: [
             {

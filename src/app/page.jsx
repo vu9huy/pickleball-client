@@ -6,9 +6,6 @@ import Menu from "@/components/menu/Menu";
 
 
 export const metadata = {
-    title: "Sân Pickleball",
-    description:
-      "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
     keywords: [
         "san pickleball",
         "pickleball",
