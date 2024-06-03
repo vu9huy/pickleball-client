@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /search?q=
+Disallow: /admin/
+
+# Host
+Host: https://www.sanpickleball.com
+
+# Sitemaps
+Sitemap: https://www.sanpickleball.com/sitemap.xml
