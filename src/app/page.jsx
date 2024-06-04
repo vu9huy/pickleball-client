@@ -20,7 +20,7 @@ export const metadata = {
         "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
         images: [
             {
-                url: "https://dminhvu.com/images/home/thumbnail.png",
+                url: "/san-pickleball.jpeg",
                 width: 1200,
                 height: 630,
                 alt: "sanpickleball"
@@ -36,7 +36,7 @@ export const metadata = {
         site: "@sanpickleball",
         images: [
             {
-                url: "https://dminhvu.com/images/home/thumbnail.png",
+                url: "/san-pickleball.jpeg",
                 width: 1200,
                 height: 630,
                 alt: "sanpickleball"

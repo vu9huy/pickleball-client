@@ -2,6 +2,7 @@
     background-color: red;
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 10px;
 }
 
@@ -9,6 +10,7 @@
     padding: 8px 16px;
     cursor: pointer;
     position: relative;
+    text-align: center;
 }
 
 .link-item:hover .link-children-list {
@@ -30,4 +32,5 @@
 
 .link-children-item {
     padding: 4px 16px;
+    text-align: left;
 }

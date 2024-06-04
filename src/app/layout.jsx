@@ -19,14 +19,14 @@ export const metadata = {
     },
     description:
       "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
-    metadataBase: new URL("https://sanpickleball.com"),
     openGraph: {
         siteName: "Sân Pickleball",
         type: "website",
         locale: "vi_VN"
     },
+    metadataBase: new URL("https://sanpickleball.com"),
     alternates: {
-        canonical: "https://sanpickleball.com"
+        canonical: "/"
     },
     robots: {
         index: true,
