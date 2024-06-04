@@ -77,3 +77,11 @@ li {
         max-width: 475px;
     }
 }
+
+@font-face {
+    font-family: 'Jaro';
+    src: url('/fonts/jaro/Jaro-Regular.ttf') format('ttf'),
+        url('/fonts/jaro/Jaro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

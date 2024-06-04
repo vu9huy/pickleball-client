@@ -15,8 +15,8 @@ export const viewport = {
 export const metadata = {
     title:  {
         default: "Sân Pickleball",
-        template: "%s | Sân Pickleball",
-    }, 
+        template: "%s | Sân Pickleball"
+    },
     description:
       "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
     metadataBase: new URL("https://sanpickleball.com"),
