@@ -9,7 +9,7 @@ export async function generateMetadata() {
 export default function TimSanLayout({ children }) {
     return (
         <>
-        {children}
+            {children}
         </>
     );
 }

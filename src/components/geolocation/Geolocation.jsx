@@ -3,73 +3,86 @@ import { useState, useEffect } from "react";
 import styles from "./Geolocation.module.css";
 import { useGetGeolocation } from "@/hooks/useGetGeolocation/useGetGeolocation";
 
-export default function Timsan() {
-    const [location, setLocation] = useState({});
-    const [status, setStatus] = useState("");
+const options = {
+    enableHighAccuracy: true
+    // timeout: 5000,
+    // maximumAge: 0,
+};
 
+export default function Timsan() {
+    const [status, setStatus] = useState("Checking location access...");
+    const [location, setLocation] = useState({});
+    const [hasPermission, setHasPermission] = useState(false);
 
     useEffect(() => {
-        const getLocation = () => {
-            if (navigator.geolocation) {
-                setStatus("Requesting location access...");
-                navigator.geolocation.getCurrentPosition(success, error);
-            } else {
-                setStatus("Geolocation is not supported by this browser.");
-            }
-        };
-    
-        const success = (position) => {
-            const crd = position?.coords;
-            const latitude = crd?.latitude;
-            const longitude = crd?.longitude;
-    
-            setStatus("Location access granted.");
-            setLocation({ latitude, longitude });
-        };
-    
-        const error = () => {
-            setStatus("Unable to retrieve your location.");
-        };
-    
-        getLocation();
+        checkLocation();
     }, []);
 
-    const handleGetGeolocation = () => {
-        const getLocation = () => {
-            if (navigator.geolocation) {
-                setStatus("Requesting location access...");
-                navigator.geolocation.getCurrentPosition(success, error);
+    const checkLocation = async () => {
+        if (navigator.permissions) {
+            const result = await navigator.permissions.query({ name: "geolocation" });
+            if (result.state === "granted") {
+                setHasPermission(true);
+                getLocation();
+            } else if (result.state === "prompt") {
+                getLocation();
             } else {
-                setStatus("Geolocation is not supported by this browser.");
+                setStatus("User denied the request for Geolocation.");
             }
-        };
-    
-        const success = (position) => {
-            const crd = position?.coords;
-            const latitude = crd?.latitude;
-            const longitude = crd?.longitude;
-    
-            setStatus("Location access granted.");
-            setLocation({ latitude, longitude });
-        };
-    
-        const error = () => {
-            setStatus("Unable to retrieve your location.");
-        };
-    
-        getLocation();
-    }
+        } else {
+            requestLocation();
+        }
+    };
 
-    return <div className={styles["tim-san-container"]}>
+    const getLocation = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success, error, options);
+        } else {
+            setStatus("Geolocation is not supported by this browser.");
+        }
+    };
+
+    const success = (position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        setStatus("Location access granted.");
+        setLocation({ latitude, longitude });
+        setHasPermission(true);
+    };
+
+    const error = (err) => {
+        switch (err.code) {
+            case err.PERMISSION_DENIED:
+                setStatus("User denied the request for Geolocation.");
+                setHasPermission(false);
+                break;
+            case err.POSITION_UNAVAILABLE:
+                setStatus("Location information is unavailable.");
+                break;
+            case err.TIMEOUT:
+                setStatus("The request to get user location timed out.");
+                break;
+            default:
+                setStatus("An unknown error occurred.");
+                break;
+        }
+    };
+
+    return (
         <div>
-            <span>{status}</span>
-            {location.latitude ? 
-            <div>
-                <p>Latitude: {location.latitude}, Longitude: {location.longitude}</p>
-                <button onClick={()=>handleGetGeolocation()}>Truy cập vị trí mới</button>
-            </div>
-            : 
-            <button className="" onClick={()=>handleGetGeolocation()}>Cho phép truy cập vị trí</button>}
+            <h1>Location Access Example</h1>
+            <p>{status}</p>
+            {location.latitude && (
+                <p>
+                    Latitude: {location.latitude}, Longitude: {location.longitude}
+                </p>
+            )}
+            {hasPermission ?
+                <button onClick={() => getLocation()}>
+                    Re-Ask Location
+                </button> : ""}
+
         </div>
-    </div>;
+    );
 }

@@ -30,5 +30,5 @@ export const useGetGeolocation = () => {
 
     getLocation();
 
-    return ({location, status})
-}
+    return ({ location, status });
+};
