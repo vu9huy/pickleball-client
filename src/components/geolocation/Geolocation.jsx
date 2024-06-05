@@ -30,7 +30,7 @@ export default function Timsan() {
                 setStatus("User denied the request for Geolocation.");
             }
         } else {
-            requestLocation();
+            getLocation();
         }
     };
 
@@ -45,7 +45,7 @@ export default function Timsan() {
     const success = (position) => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-
+        console.log('position', position);
         setStatus("Location access granted.");
         setLocation({ latitude, longitude });
         setHasPermission(true);
@@ -82,7 +82,6 @@ export default function Timsan() {
                 <button onClick={() => getLocation()}>
                     Re-Ask Location
                 </button> : ""}
-
         </div>
     );
 }
