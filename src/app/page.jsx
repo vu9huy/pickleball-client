@@ -2,6 +2,7 @@ import Featured from "@/components/featured/Featured";
 import styles from "./homepage.module.css";
 import CategoryList from "@/components/categoryList/CategoryList";
 import CardList from "@/components/cardList/CardList";
+import GoogleMapComp from "@/components/googleMap/GoogleMap";
 
 
 export const metadata = {
@@ -19,11 +20,11 @@ export const metadata = {
             "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
         images: [
             {
-                url: "/san-pickleball.jpeg",
+                url: '/san-pickleball.jpeg', // Must be an absolute URL, tỉ lệ 1200:630
                 width: 1200,
                 height: 630,
-                alt: "sanpickleball"
-            }
+                alt: 'sân pickleball',
+            },
         ]
     },
     twitter: {
@@ -35,11 +36,11 @@ export const metadata = {
         site: "@sanpickleball",
         images: [
             {
-                url: "/san-pickleball.jpeg",
+                url: '/san-pickleball.jpeg', // Must be an absolute URL
                 width: 1200,
                 height: 630,
-                alt: "sanpickleball"
-            }
+                alt: 'sân pickleball',
+            },
         ]
     },
     alternates: {
@@ -54,5 +55,6 @@ export default function Home() {
         <div className={styles["content"]}>
             <CardList />
         </div>
+        <GoogleMapComp />
     </div>;
 }
