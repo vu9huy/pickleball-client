@@ -2,7 +2,6 @@ import Featured from "@/components/featured/Featured";
 import styles from "./homepage.module.css";
 import CategoryList from "@/components/categoryList/CategoryList";
 import CardList from "@/components/cardList/CardList";
-import Menu from "@/components/menu/Menu";
 
 
 export const metadata = {
@@ -17,7 +16,7 @@ export const metadata = {
         type: "website",
         title: "Sân Pickleball",
         description:
-        "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
+            "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
         images: [
             {
                 url: "/san-pickleball.jpeg",
@@ -31,7 +30,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Sân Pickleball",
         description:
-        "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
+            "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
         creator: "@sanpickleball",
         site: "@sanpickleball",
         images: [
@@ -54,7 +53,6 @@ export default function Home() {
         <CategoryList />
         <div className={styles["content"]}>
             <CardList />
-            <Menu />
         </div>
     </div>;
 }

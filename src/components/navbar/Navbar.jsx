@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 import AuthLink from "../authLink/AuthLink";
-import LinkList from "../linkList/LinkList";
+import LinkList from "../desktopLinkList/DesktopLinkList";
 import Logo from "../logo/Logo";
+import DesktopMenu from "../destopMenu/DesktopMenu";
 
 const Navbar = () => {
 
@@ -45,11 +46,13 @@ const Navbar = () => {
 
     return (
         <div className={styles["navbar-container"]}>
-            <Logo />
-            <div className={styles["navbar-links"]}>
-                {/* <ThemeToggle /> */}
-                <LinkList linkList={menu} />
-                <AuthLink />
+            <div className={styles["navbar-wapper"]}>
+                <Logo />
+                {/* <div className={styles["navbar-links"]}>
+                    <LinkList linkList={menu} />
+                    <AuthLink />
+                </div> */}
+                <DesktopMenu menu={menu} />
             </div>
         </div>
     );

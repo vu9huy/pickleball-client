@@ -1,9 +1,12 @@
 :root {
     --bg: #ffffff;
     --soft-bg: #f9f9f6;
+    --dark-bg: #1e1e1e;
     --text-dark: #0f0f0f;
-    --text-light: #a1a1a1;
+    --text-light-1: #a1a1a1;
+    --text-light-2: #d0d0d0;
     --primary-color: #99de47;
+    --page-max-width: 1192px;
 }
 
 * {
@@ -32,7 +35,9 @@ li {
     color: var(--textColor);
 }
 
-.wrapper {
+
+
+/* .wrapper {
     max-width: 1536px;
     margin-left: auto;
     margin-right: auto;
@@ -82,7 +87,7 @@ li {
     .wrapper {
         max-width: 475px;
     }
-}
+} */
 
 @font-face {
     font-family: 'Jaro';

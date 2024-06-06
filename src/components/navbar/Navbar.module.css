@@ -1,9 +1,20 @@
 .navbar-container {
+    padding: 20px;
+    background-color: #f9f9f6;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-wapper {
+    max-width: var(--page-max-width);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
+    width: 100%;
 }
 
 .navbar-links {
