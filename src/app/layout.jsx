@@ -1,7 +1,7 @@
 
 import "./globals.css";
 // import { DM_Sans } from "next/font/google";
-import Footer from "@/components/foooter/Footer";
+import Footer from "@/components/footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "@/components/navbar/Navbar";
 import { dm_sans } from "./fonts/googleFont";
@@ -84,7 +84,7 @@ export default function RootLayout({ children }) {
                     <div className="wrapper">
                         <Navbar />
                         {children}
-                        {/* <Footer /> */}
+                        <Footer />
                     </div>
                 </div>
             </body>

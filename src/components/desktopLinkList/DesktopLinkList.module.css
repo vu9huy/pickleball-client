@@ -52,30 +52,32 @@
     padding: 10px 16px;
 }
 
-.desktop-link-children-item:hover a span {
-    padding-left: 0;
+.desktop-link-children-item a {
+    position: relative;
+    transition: transform 0.3s ease;
+    --webkit-transition: transform 0.3s ease;
+    transform: translateX(0px);
 }
 
-.desktop-link-children-item:hover a span {
+.desktop-link-children-item a:hover {
     display: inline-block;
-    word-break: break-word;
-    padding-left: 10px;
-    transition: all 0.3s ease;
-    --webkit-transition: all 0.3s ease;
     color: #ffffff;
+    word-break: break-word;
+    transition: transform 0.3s ease;
+    --webkit-transition: transform 0.3s ease;
+    transform: translateX(10px);
+}
+
+.desktop-link-children-item a span {
     position: relative;
 }
-
 
 .desktop-link-children-item a span:after {
     content: "" !important;
     display: block !important;
     position: absolute;
     z-index: 10;
-    /* top: auto; */
     bottom: -4px;
-    /* left: 5%; */
-    /* right: auto;  */
     height: 2px;
     transform: none;
     width: 0;

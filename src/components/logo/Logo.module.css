@@ -1,11 +1,3 @@
-/* @font-face {
-    font-family: 'Jaro';
-    src: url('/fonts/jaro/Jaro-Regular.ttf') format('ttf'),
-        url('/fonts/jaro/Jaro-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-} */
-
 .logo-container {
     display: flex;
     flex-direction: column;
@@ -15,6 +7,6 @@
 
 .text-logo {
     text-align: center;
-    font-family: Jaro;
+    font-family: Jaro, sans-serif;
     font-size: 20px;
 }
