@@ -57,6 +57,6 @@ export default function Home() {
             <CardList />
             <Menu />
         </div>
-        <GoogleMapComp/>
+        {/* <GoogleMapComp/> */}
     </div>;
 }

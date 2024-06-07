@@ -1,9 +1,9 @@
 
-import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/foooter/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Navbar from "@/components/navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 

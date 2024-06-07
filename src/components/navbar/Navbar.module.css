@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
+    padding: 12px;
+    background-color: #e6e84d;
 }
 
 .navbar-links {

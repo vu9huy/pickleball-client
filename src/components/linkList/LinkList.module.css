@@ -1,16 +1,16 @@
 .link-list-container {
-    background-color: red;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
 }
 
 .link-item {
     padding: 8px 16px;
     cursor: pointer;
     position: relative;
-    text-align: center;
+}
+.link-item:hover {
+    /* background-color: aqua; */
 }
 
 .link-item:hover .link-children-list {
@@ -24,7 +24,7 @@
     left: 0;
     display: flex;
     flex-direction: column;
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 150px;
     padding: 4px 0;
     transition: 0.3s;

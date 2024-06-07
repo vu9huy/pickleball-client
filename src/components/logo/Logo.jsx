@@ -9,7 +9,7 @@ const Logo = () => {
         <div className={styles["logo-container"]}>
             <Image src={"/logo-fit-96x96.webp"} alt="logo" width={50} height={50} />
             <span className={styles["text-logo"]}>
-                Sân Picklebal
+                Sân Pickleball
             </span>
         </div>
     );

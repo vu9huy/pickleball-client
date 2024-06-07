@@ -4,7 +4,8 @@
     --text-dark: #0f0f0f;
     --text-light: #a1a1a1;
     --primary-color: #99de47;
-}
+    --secondary-color: #ccce2e;
+}   
 
 * {
     padding: 0;
@@ -33,16 +34,16 @@ li {
 }
 
 .wrapper {
-    max-width: 1536px;
+    max-width: 1366px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 80px;
-    padding-right: 80px;
 }
 
-@media screen and (max-width: 1536px) {
+@media screen and (max-width: 1366px) {
     .wrapper {
-        max-width: 1366px;
+        max-width: 1280px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
 
