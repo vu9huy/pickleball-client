@@ -30,7 +30,7 @@
     transform: none;
     width: 0;
     transition: all 0.3s ease;
-    background-color: red;
+    background-color: #99de47;
 }
 
 .desktop-link-item.link-active:after {
@@ -41,11 +41,50 @@
     width: 90%;
 }
 
-
 .desktop-link-children-item {
     text-transform: capitalize;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 300;
+}
+
+.desktop-link-children-item a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 16px;
+}
+
+.desktop-link-children-item:hover a span {
+    padding-left: 0;
+}
+
+.desktop-link-children-item:hover a span {
+    display: inline-block;
+    word-break: break-word;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+    --webkit-transition: all 0.3s ease;
+    color: #ffffff;
+    position: relative;
+}
+
+
+.desktop-link-children-item a span:after {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    z-index: 10;
+    /* top: auto; */
+    bottom: -4px;
+    /* left: 5%; */
+    /* right: auto;  */
+    height: 2px;
+    transform: none;
+    width: 0;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+.desktop-link-children-item a:hover span:after {
+    width: 90%;
 }
 
 .desktop-link-item:hover .desktop-link-children-list {
@@ -63,13 +102,12 @@
     background-color: var(--dark-bg);
     color: var(--text-light-2);
     width: 150px;
-    padding: 4px 0;
+    padding: 12px 0;
     transition: 0.3s;
-
 }
 
 .desktop-link-children-item {
     display: block;
-    padding: 10px 16px;
+    width: 100%;
     text-align: left;
 }

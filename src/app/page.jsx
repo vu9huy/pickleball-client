@@ -20,11 +20,11 @@ export const metadata = {
             "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
         images: [
             {
-                url: '/san-pickleball.jpeg', // Must be an absolute URL, tỉ lệ 1200:630
+                url: "/san-pickleball.jpeg", // Must be an absolute URL, tỉ lệ 1200:630
                 width: 1200,
                 height: 630,
-                alt: 'sân pickleball',
-            },
+                alt: "sân pickleball"
+            }
         ]
     },
     twitter: {
@@ -36,11 +36,11 @@ export const metadata = {
         site: "@sanpickleball",
         images: [
             {
-                url: '/san-pickleball.jpeg', // Must be an absolute URL
+                url: "/san-pickleball.jpeg", // Must be an absolute URL
                 width: 1200,
                 height: 630,
-                alt: 'sân pickleball',
-            },
+                alt: "sân pickleball"
+            }
         ]
     },
     alternates: {
@@ -55,10 +55,6 @@ export default function Home() {
         <div className={styles["content"]}>
             <CardList />
         </div>
-<<<<<<< HEAD
-        {/* <GoogleMapComp/> */}
-=======
-        <GoogleMapComp />
->>>>>>> 61e7d6908c6fbe712986a06275e6794a6f041749
+        {/* <GoogleMapComp /> */}
     </div>;
 }

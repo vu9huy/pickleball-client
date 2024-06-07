@@ -1,11 +1,11 @@
 
 import "./globals.css";
-import { DM_Sans } from "next/font/google";
+// import { DM_Sans } from "next/font/google";
 import Footer from "@/components/foooter/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "@/components/navbar/Navbar";
+import { dm_sans } from "./fonts/googleFont";
 
-const dm_san = DM_Sans({ subsets: ["latin"] });
 
 export const viewport = {
     width: "device-width",
@@ -42,14 +42,11 @@ export const metadata = {
         statusBarStyle: "default",
         capable: true
     },
-    // verification: {
-    //     google: "YOUR_DATA",
-    //     yandex: ["YOUR_DATA"],
-    //     other: {
-    //         "msvalidate.01": ["YOUR_DATA"],
-    //         "facebook-domain-verification": ["YOUR_DATA"]
-    //     }
-    // },
+    verification: {
+        other: {
+            "msvalidate.01": ["4ae656febbb7b281f0b75ac157bb5044"]
+        }
+    },
     icons: {
         icon: [
             {
@@ -82,7 +79,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${dm_san.className}`}>
+            <body className={dm_sans.className} >
                 <div className="container">
                     <div className="wrapper">
                         <Navbar />

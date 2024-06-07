@@ -45,7 +45,7 @@ export default function Timsan() {
     const success = (position) => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-        console.log('position', position);
+        console.log("position", position);
         setStatus("Location access granted.");
         setLocation({ latitude, longitude });
         setHasPermission(true);

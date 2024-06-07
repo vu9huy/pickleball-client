@@ -21,8 +21,8 @@ const Navbar = () => {
             path: "/huong-dan"
         },
         {
-            label: "Blog",
-            path: "/blog"
+            label: "Blogs",
+            path: "/blogs"
         },
         {
             label: "Giao lưu",
