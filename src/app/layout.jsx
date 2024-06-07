@@ -1,11 +1,11 @@
 
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import Footer from "@/components/foooter/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "@/components/navbar/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const dm_san = DM_Sans({ subsets: ["latin"] });
 
 export const viewport = {
     width: "device-width",
@@ -13,12 +13,12 @@ export const viewport = {
 };
 
 export const metadata = {
-    title:  {
+    title: {
         default: "Sân Pickleball",
         template: "%s | Sân Pickleball"
     },
     description:
-      "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
+        "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
     openGraph: {
         siteName: "Sân Pickleball",
         type: "website",
@@ -82,7 +82,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body className={`${dm_san.className}`}>
                 <div className="container">
                     <div className="wrapper">
                         <Navbar />

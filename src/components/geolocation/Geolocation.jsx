@@ -53,19 +53,19 @@ export default function Timsan() {
 
     const error = (err) => {
         switch (err.code) {
-            case err.PERMISSION_DENIED:
-                setStatus("User denied the request for Geolocation.");
-                setHasPermission(false);
-                break;
-            case err.POSITION_UNAVAILABLE:
-                setStatus("Location information is unavailable.");
-                break;
-            case err.TIMEOUT:
-                setStatus("The request to get user location timed out.");
-                break;
-            default:
-                setStatus("An unknown error occurred.");
-                break;
+        case err.PERMISSION_DENIED:
+            setStatus("User denied the request for Geolocation.");
+            setHasPermission(false);
+            break;
+        case err.POSITION_UNAVAILABLE:
+            setStatus("Location information is unavailable.");
+            break;
+        case err.TIMEOUT:
+            setStatus("The request to get user location timed out.");
+            break;
+        default:
+            setStatus("An unknown error occurred.");
+            break;
         }
     };
 

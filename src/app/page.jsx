@@ -2,7 +2,6 @@ import Featured from "@/components/featured/Featured";
 import styles from "./homepage.module.css";
 import CategoryList from "@/components/categoryList/CategoryList";
 import CardList from "@/components/cardList/CardList";
-import Menu from "@/components/menu/Menu";
 import GoogleMapComp from "@/components/googleMap/GoogleMap";
 
 
@@ -18,13 +17,13 @@ export const metadata = {
         type: "website",
         title: "Sân Pickleball",
         description:
-        "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
+            "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
         images: [
             {
-            url: '/san-pickleball.jpeg', // Must be an absolute URL, tỉ lệ 1200:630
-            width: 1200,
-            height: 630,
-            alt: 'sân pickleball',
+                url: '/san-pickleball.jpeg', // Must be an absolute URL, tỉ lệ 1200:630
+                width: 1200,
+                height: 630,
+                alt: 'sân pickleball',
             },
         ]
     },
@@ -32,15 +31,15 @@ export const metadata = {
         card: "summary_large_image",
         title: "Sân Pickleball",
         description:
-        "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
+            "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
         creator: "@sanpickleball",
         site: "@sanpickleball",
         images: [
             {
-            url: '/san-pickleball.jpeg', // Must be an absolute URL
-            width: 1200,
-            height: 630,
-            alt: 'sân pickleball',
+                url: '/san-pickleball.jpeg', // Must be an absolute URL
+                width: 1200,
+                height: 630,
+                alt: 'sân pickleball',
             },
         ]
     },
@@ -55,8 +54,11 @@ export default function Home() {
         <CategoryList />
         <div className={styles["content"]}>
             <CardList />
-            <Menu />
         </div>
+<<<<<<< HEAD
         {/* <GoogleMapComp/> */}
+=======
+        <GoogleMapComp />
+>>>>>>> 61e7d6908c6fbe712986a06275e6794a6f041749
     </div>;
 }

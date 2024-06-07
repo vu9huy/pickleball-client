@@ -1,10 +1,25 @@
 .navbar-container {
+    padding: 20px;
+    background-color: #f9f9f6;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-wapper {
+    max-width: var(--page-max-width);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+<<<<<<< HEAD
     padding: 12px;
     background-color: #e6e84d;
+=======
+    width: 100%;
+>>>>>>> 61e7d6908c6fbe712986a06275e6794a6f041749
 }
 
 .navbar-links {
