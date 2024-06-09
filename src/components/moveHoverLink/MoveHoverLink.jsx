@@ -8,5 +8,5 @@ const MoveHoverLink = ({ href, label }) => {
             <span>{label}</span>
         </Link>
     );
-}
+};
 export default MoveHoverLink;

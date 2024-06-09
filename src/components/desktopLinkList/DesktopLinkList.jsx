@@ -16,7 +16,7 @@ const DesktopLinkList = ({ linkList }) => {
             {linkList?.map(link => {
                 return (<>
                     {link?.children ?
-                        <li className={styles["desktop-link-item"]}>
+                        <li key={link.path} className={styles["desktop-link-item"]}>
                             <span>{link.label}</span>
                             <ul className={styles["desktop-link-children-list"]}>
                                 {link?.children?.map(childLink => {
@@ -30,7 +30,7 @@ const DesktopLinkList = ({ linkList }) => {
                                 })}
                             </ul>
                         </li> :
-                        <li className={`${styles["desktop-link-item"]} ${link.path === pathname ? styles["link-active"] : ""}`}>
+                        <li className={`${styles["desktop-link-item"]} ${link.path === pathname ? styles["link-active"] : ""}`} key={link.path}>
                             <Link href={link.path}>
                                 <span>{link.label}</span>
                             </Link>

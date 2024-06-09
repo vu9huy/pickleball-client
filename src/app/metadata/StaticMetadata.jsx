@@ -45,5 +45,5 @@ export const staticMetadata = {
             "breadcrumd": {}
         }
     }
-}
+};
 

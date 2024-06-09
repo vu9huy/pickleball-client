@@ -3,6 +3,7 @@ import styles from "./homepage.module.css";
 import CategoryList from "@/components/categoryList/CategoryList";
 import CardList from "@/components/cardList/CardList";
 import GoogleMapComp from "@/components/googleMap/GoogleMap";
+import MapboxMap from "@/components/mapbox/MapBox";
 
 
 export const metadata = {
@@ -56,5 +57,6 @@ export default function Home() {
             <CardList />
         </div>
         {/* <GoogleMapComp /> */}
+        <MapboxMap />
     </div>;
 }
