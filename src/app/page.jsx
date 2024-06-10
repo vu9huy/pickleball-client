@@ -5,6 +5,7 @@ import CardList from "@/components/cardList/CardList";
 import GoogleMapComp from "@/components/googleMap/GoogleMap";
 import MapboxMap from "@/components/mapbox/MapBox";
 import MapboxMapTest from "@/components/mapbox/MapBoxTest";
+import MapBox2 from "@/components/mapbox/MapBox2";
 
 
 export const metadata = {
@@ -59,6 +60,7 @@ export default function Home() {
         </div>
         {/* <GoogleMapComp /> */}
         {/* <MapboxMap /> */}
-        <MapboxMapTest />
+        {/* <MapboxMapTest /> */}
+        <MapBox2 />
     </div>;
 }

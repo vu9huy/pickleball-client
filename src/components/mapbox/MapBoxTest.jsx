@@ -59,8 +59,8 @@ const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_API_KEY; // Set your mapbox 
 //         </>
 //     );
 // }
-import React, { useState } from 'react';
-import Map, { Source, Layer } from 'react-map-gl';
+import React, { useState } from "react";
+import Map, { Source, Layer } from "react-map-gl";
 
 // Sample point data
 const samplePoints = [
@@ -75,15 +75,15 @@ const samplePoints = [
 // Function to generate GeoJSON data from points
 const generateGeoJSON = (points) => {
     return {
-        type: 'FeatureCollection',
+        type: "FeatureCollection",
         features: points.map(point => ({
-            type: 'Feature',
+            type: "Feature",
             geometry: {
-                type: 'Point',
-                coordinates: [point.longitude, point.latitude],
+                type: "Point",
+                coordinates: [point.longitude, point.latitude]
             },
-            properties: point,
-        })),
+            properties: point
+        }))
     };
 };
 
@@ -94,11 +94,11 @@ const renderMarker = (point, index) => {
             <Marker key={index} latitude={point.latitude} longitude={point.longitude}>
                 <div
                     style={{
-                        backgroundColor: 'red',
-                        borderRadius: '50%',
-                        padding: '10px',
-                        color: 'white',
-                        cursor: 'pointer'
+                        backgroundColor: "red",
+                        borderRadius: "50%",
+                        padding: "10px",
+                        color: "white",
+                        cursor: "pointer"
                     }}
                     onClick={() => setSelectedPoint(point)}
                 >
@@ -112,11 +112,11 @@ const renderMarker = (point, index) => {
             <Marker key={index} latitude={point.latitude} longitude={point.longitude}>
                 <div
                     style={{
-                        backgroundColor: 'blue',
-                        borderRadius: '50%',
-                        padding: '5px',
-                        color: 'white',
-                        cursor: 'pointer'
+                        backgroundColor: "blue",
+                        borderRadius: "50%",
+                        padding: "5px",
+                        color: "white",
+                        cursor: "pointer"
                     }}
                     onClick={() => setSelectedPoint(point)}
                 >
@@ -132,68 +132,69 @@ const MapboxMapTest = () => {
     const geojson = generateGeoJSON(samplePoints);
 
     const clusterLayer = {
-        id: 'clusters',
-        type: 'circle',
-        source: 'points',
-        filter: ['has', 'point_count'],
+        id: "clusters",
+        type: "circle",
+        source: "points",
+        filter: ["has", "point_count"],
         paint: {
-            'circle-color': [
-                'step',
-                ['get', 'point_count'],
-                '#51bbd6',
+            "circle-color": [
+                "step",
+                ["get", "point_count"],
+                "#51bbd6",
                 100,
-                '#f1f075',
+                "#f1f075",
                 750,
-                '#f28cb1',
+                "#f28cb1"
             ],
-            'circle-radius': [
-                'step',
-                ['get', 'point_count'],
+            "circle-radius": [
+                "step",
+                ["get", "point_count"],
                 20,
                 100,
                 30,
                 750,
-                40,
-            ],
-        },
+                40
+            ]
+        }
     };
 
     const clusterCountLayer = {
-        id: 'cluster-count',
-        type: 'symbol',
-        source: 'points',
-        filter: ['has', 'point_count'],
+        id: "cluster-count",
+        type: "symbol",
+        source: "points",
+        filter: ["has", "point_count"],
         layout: {
-            'text-field': '{point_count_abbreviated}',
-            'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-            'text-size': 12,
-        },
+            "text-field": "{point_count_abbreviated}",
+            "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+            "text-size": 12
+        }
     };
 
     const unclusteredPointLayer = {
-        id: 'unclustered-point',
-        type: 'circle',
-        source: 'points',
-        filter: ['!', ['has', 'point_count']],
+        id: "unclustered-point",
+        type: "symbol",
+        source: "points",
+        filter: ["!", ["has", "point_count"]],
         paint: {
-            'circle-color': '#11b4da',
-            'circle-radius': 8,
-            'circle-stroke-width': 1,
-            'circle-stroke-color': '#fff',
-        },
+            // 'circle-color': '#11b4da',
+            // 'circle-radius': 8,
+            // 'circle-stroke-width': 1,
+            // 'circle-stroke-color': '#fff',
+            "icon-image": "./logo-fit-96x96.png"
+        }
     };
 
-    const customMarkersLayer = {
-        id: 'custom-markers',
-        type: 'symbol',
-        source: 'points',
-        filter: ['!', ['has', 'point_count']],
-        paint: {
-            'icon-image': './logo-fit-96x96.png', // Use a custom marker image
-            'icon-size': 1.5,
-            'icon-allow-overlap': true,
-        },
-    };
+    // const customMarkersLayer = {
+    //     id: 'custom-markers',
+    //     type: 'symbol',
+    //     source: 'points',
+    //     filter: ['!', ['has', 'point_count']],
+    //     paint: {
+    //         'icon-image': './logo-fit-96x96.png', // Use a custom marker image
+    //         'icon-size': 1.5,
+    //         'icon-allow-overlap': true,
+    //     },
+    // };
 
     return (
         <Map
@@ -218,8 +219,8 @@ const MapboxMapTest = () => {
             >
                 <Layer {...clusterLayer} />
                 <Layer {...clusterCountLayer} />
-                {/* <Layer {...unclusteredPointLayer} /> */}
-                <Layer {...customMarkersLayer} />
+                <Layer {...unclusteredPointLayer} />
+                {/* <Layer {...customMarkersLayer} /> */}
             </Source>
         </Map>
     );
