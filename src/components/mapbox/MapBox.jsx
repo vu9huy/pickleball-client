@@ -9,10 +9,9 @@ const MapboxMap = () => {
         height: "40px"
     };
 
-
     return (
         <Map
-            mapboxAccessToken="pk.eyJ1IjoidnU5aHV5IiwiYSI6ImNseDdmdGVwdzB1aGsya3M1dmNybnE4enYifQ.Cx99uFgHkRZBKi7ygN3q7Q"
+            mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_KEY}
             initialViewState={{
                 longitude: 105.7947648,
                 latitude: 20.9780736,
@@ -39,8 +38,8 @@ const MapboxMap = () => {
                 latitude={20.9780736}
                 // onClose={() => setSelectedLocation(null)}
                 closeOnClick={true}
-                anchor="top"
-                offsetTop={-80}
+                anchor="bottom"
+                offset={[0, -45]}
             >
                 <div>rreoiklklkl</div>
             </Popup>
