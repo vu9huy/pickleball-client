@@ -4,8 +4,8 @@ import CategoryList from "@/components/categoryList/CategoryList";
 import CardList from "@/components/cardList/CardList";
 import GoogleMapComp from "@/components/googleMap/GoogleMap";
 import MapboxMap from "@/components/mapbox/MapBox";
-import MapboxMapTest from "@/components/mapbox/MapBoxTest";
-import MapBox2 from "@/components/mapbox/MapBox2";
+import MapBoxCluster from "@/components/mapbox/cluster(current not use)/MapBoxCluster";
+import MapBoxTest from "@/components/mapbox/test/MapBoxTest";
 
 
 export const metadata = {
@@ -59,8 +59,8 @@ export default function Home() {
             <CardList />
         </div>
         {/* <GoogleMapComp /> */}
-        {/* <MapboxMap /> */}
-        {/* <MapboxMapTest /> */}
-        <MapBox2 />
+        <MapboxMap />
+        {/* <MapBoxTest /> */}
+        {/* <MapBoxCluster /> */}
     </div>;
 }

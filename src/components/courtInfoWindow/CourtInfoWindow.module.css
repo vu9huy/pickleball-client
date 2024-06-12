@@ -1,0 +1,19 @@
+.court-info-window-container {
+    width: 200px;
+    height: 150px;
+}
+
+.court-info-window-title {}
+
+.court-info-window-description {}
+
+.court-info-window-images-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.court-info-window-google-map-link {
+    color: blue;
+    text-decoration: underline;
+}

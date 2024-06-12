@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from "react";
 // import { useValue } from '../../context/ContextProvider';
 // import { getRooms } from '../../actions/room';
-import ReactMapGL, { Marker } from 'react-map-gl';
-import Supercluster from 'supercluster';
-import './cluster.css';
+import ReactMapGL, { Marker } from "react-map-gl";
+import Supercluster from "supercluster";
+import "./cluster.css";
 
 const supercluster = new Supercluster({
     radius: 75,
-    maxZoom: 20,
+    maxZoom: 20
 });
 
-const MapBox2 = () => {
+const MapBoxCluster = () => {
     // const {
     //     state: { rooms },
     //     dispatch,
@@ -22,7 +22,7 @@ const MapBox2 = () => {
     const [points, setPoints] = useState([]);
     const [clusters, setClusters] = useState([]);
     const [bounds, setBounds] = useState([-180, -85, 180, 85]);
-    const [zoom, setZoom] = useState(0);
+    const [zoom, setZoom] = useState(15);
 
     const customMarkerStyle = {
         width: "40px",
@@ -51,82 +51,82 @@ const MapBox2 = () => {
         // }));
         const points = [
             {
-                type: 'Feature',
+                type: "Feature",
                 properties: {
                     cluster: false,
                     roomId: 5487549854,
-                    price: '4343',
-                    title: '11',
+                    price: "4343",
+                    title: "11",
                     description: "re983498439",
                     lng: 105.1947648,
                     lat: 20.1780736,
                     images: "room.images",
                     uPhoto: "room.uPhoto",
-                    uName: "room.uName",
+                    uName: "room.uName"
                 },
                 geometry: {
-                    type: 'Point',
-                    coordinates: [105.1947648, 20.1780736],
-                },
+                    type: "Point",
+                    coordinates: [105.1947648, 20.1780736]
+                }
             },
             {
-                type: 'Feature',
+                type: "Feature",
                 properties: {
                     cluster: false,
                     roomId: 5454542,
-                    price: '4343',
-                    title: '22',
+                    price: "4343",
+                    title: "22",
                     description: "re983498439",
                     lng: 105.5947648,
                     lat: 20.2780736,
                     images: "room.images",
                     uPhoto: "room.uPhoto",
-                    uName: "room.uName",
+                    uName: "room.uName"
                 },
                 geometry: {
-                    type: 'Point',
-                    coordinates: [105.5947648, 20.2780736],
-                },
+                    type: "Point",
+                    coordinates: [105.5947648, 20.2780736]
+                }
             },
             {
-                type: 'Feature',
+                type: "Feature",
                 properties: {
                     cluster: false,
                     roomId: 5454542,
-                    price: '4343',
-                    title: '33',
+                    price: "4343",
+                    title: "33",
                     description: "re983498439",
                     lng: 105.3947648,
                     lat: 20.67807366,
                     images: "room.images",
                     uPhoto: "room.uPhoto",
-                    uName: "room.uName",
+                    uName: "room.uName"
                 },
                 geometry: {
-                    type: 'Point',
-                    coordinates: [105.3947648, 20.67807366],
-                },
+                    type: "Point",
+                    coordinates: [105.3947648, 20.67807366]
+                }
             },
             {
-                type: 'Feature',
+                type: "Feature",
                 properties: {
                     cluster: false,
                     roomId: 5454542,
-                    price: '4343',
-                    title: '33',
+                    price: "4343",
+                    title: "33",
                     description: "re983498439",
                     lng: 105.6947648,
                     lat: 20.17807366,
                     images: "room.images",
                     uPhoto: "room.uPhoto",
-                    uName: "room.uName",
+                    uName: "room.uName"
                 },
                 geometry: {
-                    type: 'Point',
-                    coordinates: [105.6947648, 20.17807366],
-                },
-            },
-        ]
+                    type: "Point",
+                    coordinates: [105.6947648, 20.17807366]
+                }
+            }
+        ];
         setPoints(points);
     }, []);
 
@@ -135,18 +135,19 @@ const MapBox2 = () => {
         setClusters(supercluster.getClusters(bounds, zoom));
     }, [points, zoom, bounds]);
 
-    // useEffect(() => {
-    //     if (mapRef.current) {
-    //         setBounds(mapRef.current.getMap().getBounds().toArray().flat());
-    //     }
-    // }, [mapRef?.current]);
+    useEffect(() => {
+        if (mapRef.current) {
+            setBounds(mapRef.current.getMap().getBounds().toArray().flat());
+        }
+    }, [mapRef?.current]);
+
     return (
         <ReactMapGL
-            initialViewState={{ latitude: 51.5072, longitude: 0.1276 }}
+            initialViewState={{ latitude: 20.17807366, longitude: 105.6947648 }}
             mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_KEY}
-            mapStyle="mapbox://styles/mapbox/streets-v11"
+            mapStyle="mapbox://styles/mapbox/streets-v10"
             ref={mapRef}
-            style={{ width: 1000, height: 600 }}
+            style={{ width: 800, height: 600 }}
             onZoomEnd={(e) => setZoom(Math.round(e.viewState.zoom))}
         >
             {clusters.map((cluster) => {
@@ -163,7 +164,7 @@ const MapBox2 = () => {
                                 className="cluster-marker"
                                 style={{
                                     width: `${10 + (point_count / points.length) * 20}px`,
-                                    height: `${10 + (point_count / points.length) * 20}px`,
+                                    height: `${10 + (point_count / points.length) * 20}px`
                                 }}
                                 onClick={() => {
                                     const zoom = Math.min(
@@ -173,7 +174,7 @@ const MapBox2 = () => {
                                     mapRef.current.flyTo({
                                         center: [longitude, latitude],
                                         zoom,
-                                        speed: 1,
+                                        speed: 1
                                     });
                                 }}
                             >
@@ -201,4 +202,4 @@ const MapBox2 = () => {
     );
 };
 
-export default MapBox2;
+export default MapBoxCluster;

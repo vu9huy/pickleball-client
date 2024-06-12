@@ -1,49 +1,98 @@
 "use client";
 import React, { useState } from "react";
-import Map, { Marker, Popup } from "react-map-gl";
+import Map from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import MarkerMapBox from "./marker/MarkerMapBox";
+import "./MapBox.css";
+
+const courtList = [
+    {
+        id: 1,
+        latitude: 20.9780736,
+        longitude: 105.7947648,
+        title: "Sân 1",
+        description: "Description for Point 1",
+        owner: "Quân Vũ",
+        images: [{
+            url: "/san-pickleball.jpeg",
+            alt: "sân picklball 1"
+        },
+        {
+            url: "/san-pickleball.jpeg",
+            alt: "sân picklball 2"
+        }]
+    },
+    {
+        id: 2,
+        latitude: 20.9780736,
+        longitude: 105.7547648,
+        title: "Sân 2",
+        description: "Description for Point 2",
+        owner: "Quân Vũ",
+        images: [{
+            url: "/san-pickleball.jpeg",
+            alt: "sân picklball 1"
+        },
+        {
+            url: "/san-pickleball.jpeg",
+            alt: "sân picklball 2"
+        }]
+    },
+    {
+        id: 3,
+        latitude: 20.9480736,
+        longitude: 105.7247648,
+        title: "Sân 3",
+        description: "Description for Point 3",
+        owner: "Quân Vũ",
+        images: [{
+            url: "/san-pickleball.jpeg",
+            alt: "sân picklball 1"
+        },
+        {
+            url: "/san-pickleball.jpeg",
+            alt: "sân picklball 2"
+        }]
+    }
+];
 
 const MapboxMap = () => {
-    const customMarkerStyle = {
-        width: "40px",
-        height: "40px"
+
+    const [viewState, setViewState] = useState({
+        longitude: 105.757403,
+        latitude: 20.956594,
+        zoom: 12.5
+    });
+
+    const [selectedCourt, setSelectedCourt] = useState(null);
+
+    const handleMarkerClick = (point) => {
+        setSelectedCourt(point);
+    };
+
+    const handleClosePopup = () => {
+        setSelectedCourt(null);
     };
 
     return (
-        <Map
-            mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_KEY}
-            initialViewState={{
-                longitude: 105.7947648,
-                latitude: 20.9780736,
-                zoom: 15
-            }}
-            cooperativeGestures={true}
-            style={{ width: 1000, height: 600 }}
-            mapStyle="mapbox://styles/mapbox/streets-v9"
-        >
-            <Marker
-                longitude={105.7947648}
-                latitude={20.9780736}
-                anchor="bottom"
-                clickable={true}
-                onClick={() => alert("marker was clicked!")}
-                title={"clickable google.maps.Marker"}
-
+        <div className="map-box-container">
+            <Map
+                mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_KEY}
+                initialViewState={viewState}
+                cooperativeGestures={true}
+                style={{ width: "fit", height: "100%" }}
+                mapStyle="mapbox://styles/mapbox/streets-v12"
+                locale={{
+                    "ScrollZoomBlocker.CtrlMessage": "Giữ ctrl và cuộn chuột để phóng to, thu nhỏ",
+                    "ScrollZoomBlocker.CmdMessage": "Giữ ⌘ và cuộn chuột để phóng to, thu nhỏ"
+                }}
             >
-                <img src="./logo-fit-96x96.png" style={customMarkerStyle} />
-            </Marker>
+                {courtList.map((court) => (
+                    <MarkerMapBox key={court.id} court={court} selectedCourt={selectedCourt} handleMarkerClick={handleMarkerClick} handleClosePopup={handleClosePopup} />
+                ))}
 
-            <Popup
-                longitude={105.7947648}
-                latitude={20.9780736}
-                // onClose={() => setSelectedLocation(null)}
-                closeOnClick={true}
-                anchor="bottom"
-                offset={[0, -45]}
-            >
-                <div>rreoiklklkl</div>
-            </Popup>
-        </Map>
+            </Map>
+        </div>
     );
 };
 

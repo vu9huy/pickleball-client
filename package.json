@@ -12,12 +12,14 @@
   "dependencies": {
     "@next/third-parties": "^14.2.3",
     "@react-google-maps/api": "^2.19.3",
-    "mapbox-gl": "2.8.2",
+    "@tanstack/react-query": "^5.40.1",
+    "axios": "^1.7.2",
+    "mapbox-gl": "^3.4.0",
     "next": "13.4.19",
     "next-seo": "^6.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-map-gl": "7.0.12",
+    "react-map-gl": "^7.1.7",
     "react-select": "^5.8.0",
     "supercluster": "^8.0.1"
   },
