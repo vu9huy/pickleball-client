@@ -56,7 +56,7 @@ const courtList = [
     }
 ];
 
-const MapboxMap = () => {
+const MapboxMap = ({ district, provinces }) => {
     const [viewState, setViewState] = useState({
         longitude: 105.757403,
         latitude: 20.956594,

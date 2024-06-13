@@ -1,10 +1,9 @@
 import { useState } from "react";
 import InfoWindowComp from "../infoWindow/InfoWindowComp";
-
 const { Marker } = require("@react-google-maps/api");
 
 
-const MarkerComp = ({ position }) => {
+const MarkerComp = ({ position, index, clusterer }) => {
 
     const [isDisplayInfoWindow, setIsDisplayInfoWindow] = useState(false);
 
@@ -16,6 +15,8 @@ const MarkerComp = ({ position }) => {
     return (
         <Marker
             position={position}
+            key={index}
+            clusterer={clusterer}
             icon={{
                 url: "/logo-fit-96x96.png",
                 scaledSize: new window.google.maps.Size(40, 40)
@@ -23,7 +24,7 @@ const MarkerComp = ({ position }) => {
             onClick={() => handleClickMarker()}
         >
             {isDisplayInfoWindow ?
-                <InfoWindowComp position={position} setIsDisplayInfoWindow={setIsDisplayInfoWindow}/>:
+                <InfoWindowComp position={position} setIsDisplayInfoWindow={setIsDisplayInfoWindow} /> :
                 ""}
         </Marker>
     );

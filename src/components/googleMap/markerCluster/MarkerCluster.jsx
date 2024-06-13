@@ -1,10 +1,10 @@
 import React from "react";
 import { MarkerClusterer, Marker } from "@react-google-maps/api";
+import MarkerComp from "../maker/Marker";
 
 const Pin = ({ position, index, clusterer }) => (
-    <Marker key={index} position={position} clusterer={clusterer} />
+    <MarkerComp key={index} position={position} clusterer={clusterer} />
 );
-
 
 const Map2 = ({ children }) => {
     const listings = [
@@ -22,22 +22,11 @@ const Map2 = ({ children }) => {
         );
     }
 
-
     return (
-    // <GoogleMap
-    //   id="marker-example"
-    //   mapContainerStyle={{
-    //     height: "400px",
-    //     width: "800px"
-    //   }}
-    //   zoom={15}
-    //   center={{ lat: -42.735258, lng: 147.438 }}
-    //   options={{ styles: demoMapStyles }}
-    // >
         <MarkerClusterer
             options={{
                 imagePath:
-            "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+                    "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
                 styles: []
             }}
         >
@@ -47,7 +36,6 @@ const Map2 = ({ children }) => {
                 ))
             }
         </MarkerClusterer>
-    // </GoogleMap>
     );
 };
 

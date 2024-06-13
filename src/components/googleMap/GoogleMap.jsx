@@ -224,9 +224,9 @@ const GoogleMapComp = () => {
             // clickableIcons={false}
             // options={{ styles: demoMapStyles }}
             >
-                <MarkerComp position={center}/>
-                <MarkerComp position={{ lat: 21.027763, lng: 105.834160 }}/>
-                <Map2/>
+                {/* <MarkerComp position={center}/>
+                <MarkerComp position={{ lat: 21.027763, lng: 105.834160 }}/> */}
+                <Map2 />
             </GoogleMap>
         ) : <></>}
     </div>;

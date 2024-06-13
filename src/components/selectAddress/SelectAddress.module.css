@@ -1,0 +1,14 @@
+.select-address-container {
+    font-family: unknow-font, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 20px;
+    gap: 20px;
+}
+
+.select-address-provinces,
+.select-address-district {}
+
+.select-address-label {
+    padding-bottom: 8px;
+}
