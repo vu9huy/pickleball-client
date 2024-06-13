@@ -56,11 +56,13 @@ const courtList = [
     }
 ];
 
+const MAPBOX_DEFAULT_ZOOM = 12.5;
+
 const MapboxMap = ({ district, provinces }) => {
     const [viewState, setViewState] = useState({
         longitude: 105.757403,
         latitude: 20.956594,
-        zoom: 12.5
+        zoom: MAPBOX_DEFAULT_ZOOM
     });
 
     const [selectedCourt, setSelectedCourt] = useState(null);
