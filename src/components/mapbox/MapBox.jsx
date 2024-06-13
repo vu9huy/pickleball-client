@@ -57,7 +57,6 @@ const courtList = [
 ];
 
 const MapboxMap = () => {
-
     const [viewState, setViewState] = useState({
         longitude: 105.757403,
         latitude: 20.956594,

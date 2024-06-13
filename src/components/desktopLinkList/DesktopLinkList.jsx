@@ -14,29 +14,27 @@ const DesktopLinkList = ({ linkList }) => {
     return (
         <ul className={`${barlowCondensed.variable} ${styles["desktop-link-list-container"]}`}>
             {linkList?.map(link => {
-                return (<>
-                    {link?.children ?
-                        <li key={link.path} className={styles["desktop-link-item"]}>
-                            <span>{link.label}</span>
-                            <ul className={styles["desktop-link-children-list"]}>
-                                {link?.children?.map(childLink => {
-                                    return (
-                                        <li className={`${styles["desktop-link-children-item"]}`} key={childLink.path}>
-                                            <Link href={childLink.path}>
-                                                <span>{childLink.label}</span>
-                                            </Link>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </li> :
-                        <li className={`${styles["desktop-link-item"]} ${link.path === pathname ? styles["link-active"] : ""}`} key={link.path}>
-                            <Link href={link.path}>
-                                <span>{link.label}</span>
-                            </Link>
-                        </li>
-                    }
-                </>);
+                if (link?.children) {
+                    return (<li key={link.path} className={styles["desktop-link-item"]}>
+                        <span>{link.label}</span>
+                        <ul className={styles["desktop-link-children-list"]}>
+                            {link?.children?.map(childLink => {
+                                return (
+                                    <li className={`${styles["desktop-link-children-item"]}`} key={childLink.path}>
+                                        <Link href={childLink.path}>
+                                            <span>{childLink.label}</span>
+                                        </Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </li>);
+                }
+                return (<li key={link.path} className={`${styles["desktop-link-item"]} ${link.path === pathname ? styles["link-active"] : ""}`} >
+                    <Link href={link.path}>
+                        <span>{link.label}</span>
+                    </Link>
+                </li>);
             })}
         </ul>
     );

@@ -1,7 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
-import styles from "./Geolocation.module.css";
-import { useGetGeolocation } from "@/hooks/useGetGeolocation/useGetGeolocation";
+import { useEffect } from "react";
 
 const options = {
     enableHighAccuracy: true
@@ -9,10 +7,7 @@ const options = {
     // maximumAge: 0,
 };
 
-export default function Timsan() {
-    const [status, setStatus] = useState("Checking location access...");
-    const [location, setLocation] = useState({});
-    const [hasPermission, setHasPermission] = useState(false);
+export default function Geolocation({ geolocation, setGeolocation }) {
 
     useEffect(() => {
         checkLocation();
@@ -26,8 +21,6 @@ export default function Timsan() {
                 getLocation();
             } else if (result.state === "prompt") {
                 getLocation();
-            } else {
-                setStatus("User denied the request for Geolocation.");
             }
         } else {
             getLocation();
@@ -46,25 +39,22 @@ export default function Timsan() {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         console.log("position", position);
-        setStatus("Location access granted.");
-        setLocation({ latitude, longitude });
-        setHasPermission(true);
+        setGeolocation({ latitude, longitude });
     };
 
     const error = (err) => {
         switch (err.code) {
         case err.PERMISSION_DENIED:
-            setStatus("User denied the request for Geolocation.");
-            setHasPermission(false);
+            console.log("User denied the request for Geolocation.");
             break;
         case err.POSITION_UNAVAILABLE:
-            setStatus("Location information is unavailable.");
+            console.log("Location information is unavailable.");
             break;
         case err.TIMEOUT:
-            setStatus("The request to get user location timed out.");
+            console.log("The request to get user location timed out.");
             break;
         default:
-            setStatus("An unknown error occurred.");
+            console.log("An unknown error occurred.");
             break;
         }
     };
@@ -72,16 +62,11 @@ export default function Timsan() {
     return (
         <div>
             <h1>Location Access Example</h1>
-            <p>{status}</p>
-            {location.latitude && (
+            {geolocation.latitude && (
                 <p>
-                    Latitude: {location.latitude}, Longitude: {location.longitude}
+                    Latitude: {geolocation.latitude}, Longitude: {geolocation.longitude}
                 </p>
             )}
-            {hasPermission ?
-                <button onClick={() => getLocation()}>
-                    Re-Ask Location
-                </button> : ""}
         </div>
     );
 }

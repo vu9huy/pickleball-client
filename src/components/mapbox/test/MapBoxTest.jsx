@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState } from 'react';
-import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import React, { useState } from "react";
+import ReactMapGL, { Marker, Popup } from "react-map-gl";
 
 const samplePoints = [
     { id: 1, latitude: 37.78, longitude: -122.41, title: "Point 1", description: "Description for Point 1" },
     { id: 2, latitude: 37.79, longitude: -122.42, title: "Point 2", description: "Description for Point 2" },
-    { id: 3, latitude: 37.76, longitude: -122.45, title: "Point 3", description: "Description for Point 3" },
+    { id: 3, latitude: 37.76, longitude: -122.45, title: "Point 3", description: "Description for Point 3" }
 ];
 
 const MapBoxTest = () => {

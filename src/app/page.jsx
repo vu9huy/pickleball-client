@@ -2,10 +2,6 @@ import Featured from "@/components/featured/Featured";
 import styles from "./homepage.module.css";
 import CategoryList from "@/components/categoryList/CategoryList";
 import CardList from "@/components/cardList/CardList";
-import GoogleMapComp from "@/components/googleMap/GoogleMap";
-import MapboxMap from "@/components/mapbox/MapBox";
-import MapBoxCluster from "@/components/mapbox/cluster(current not use)/MapBoxCluster";
-import MapBoxTest from "@/components/mapbox/test/MapBoxTest";
 
 
 export const metadata = {
@@ -58,9 +54,5 @@ export default function Home() {
         <div className={styles["content"]}>
             <CardList />
         </div>
-        {/* <GoogleMapComp /> */}
-        <MapboxMap />
-        {/* <MapBoxTest /> */}
-        {/* <MapBoxCluster /> */}
     </div>;
 }
