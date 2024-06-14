@@ -24,19 +24,19 @@
                 }
             },
             {
+                "value": "Hai Bà Trưng",
+                "label": "Hai Bà Trưng",
+                "geolocation": {
+                    "latitude": 21.0064,
+                    "longitude": 105.8642
+                }
+            },
+            {
                 "value": "Tây Hồ",
                 "label": "Tây Hồ",
                 "geolocation": {
                     "latitude": 21.0718,
                     "longitude": 105.8036
-                }
-            },
-            {
-                "value": "Long Biên",
-                "label": "Long Biên",
-                "geolocation": {
-                    "latitude": 21.0423,
-                    "longitude": 105.9119
                 }
             },
             {
@@ -56,11 +56,43 @@
                 }
             },
             {
-                "value": "Hai Bà Trưng",
-                "label": "Hai Bà Trưng",
+                "value": "Nam Từ Liêm",
+                "label": "Nam Từ Liêm",
                 "geolocation": {
-                    "latitude": 21.0064,
-                    "longitude": 105.8642
+                    "latitude": 21.0175,
+                    "longitude": 105.7665
+                }
+            },
+            {
+                "value": "Bắc Từ Liêm",
+                "label": "Bắc Từ Liêm",
+                "geolocation": {
+                    "latitude": 21.0594,
+                    "longitude": 105.7650
+                }
+            },
+            {
+                "value": "Thanh Xuân",
+                "label": "Thanh Xuân",
+                "geolocation": {
+                    "latitude": 20.9981,
+                    "longitude": 105.8105
+                }
+            },
+            {
+                "value": "Hà Đông",
+                "label": "Hà Đông",
+                "geolocation": {
+                    "latitude": 20.9739,
+                    "longitude": 105.7728
+                }
+            },
+            {
+                "value": "Thanh Trì",
+                "label": "Thanh Trì",
+                "geolocation": {
+                    "latitude": 20.9466,
+                    "longitude": 105.8412
                 }
             },
             {
@@ -72,11 +104,19 @@
                 }
             },
             {
-                "value": "Thanh Xuân",
-                "label": "Thanh Xuân",
+                "value": "Long Biên",
+                "label": "Long Biên",
                 "geolocation": {
-                    "latitude": 20.9981,
-                    "longitude": 105.8105
+                    "latitude": 21.0423,
+                    "longitude": 105.9119
+                }
+            },
+            {
+                "value": "Gia Lâm",
+                "label": "Gia Lâm",
+                "geolocation": {
+                    "latitude": 21.0208,
+                    "longitude": 105.9316
                 }
             },
             {
@@ -96,51 +136,11 @@
                 }
             },
             {
-                "value": "Gia Lâm",
-                "label": "Gia Lâm",
-                "geolocation": {
-                    "latitude": 21.0208,
-                    "longitude": 105.9316
-                }
-            },
-            {
-                "value": "Nam Từ Liêm",
-                "label": "Nam Từ Liêm",
-                "geolocation": {
-                    "latitude": 21.0175,
-                    "longitude": 105.7665
-                }
-            },
-            {
-                "value": "Thanh Trì",
-                "label": "Thanh Trì",
-                "geolocation": {
-                    "latitude": 20.9466,
-                    "longitude": 105.8412
-                }
-            },
-            {
-                "value": "Bắc Từ Liêm",
-                "label": "Bắc Từ Liêm",
-                "geolocation": {
-                    "latitude": 21.0594,
-                    "longitude": 105.7650
-                }
-            },
-            {
                 "value": "Mê Linh",
                 "label": "Mê Linh",
                 "geolocation": {
                     "latitude": 21.1628,
                     "longitude": 105.7144
-                }
-            },
-            {
-                "value": "Hà Đông",
-                "label": "Hà Đông",
-                "geolocation": {
-                    "latitude": 20.9739,
-                    "longitude": 105.7728
                 }
             },
             {

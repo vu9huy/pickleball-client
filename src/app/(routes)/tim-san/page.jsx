@@ -6,12 +6,13 @@ import { useState } from "react";
 import SelectAddress from "@/components/selectAddress/SelectAddress";
 import MapboxMap from "@/components/mapbox/MapBox";
 import VisglMap from "@/components/googleMap/VisglMap";
+import VisglMapContainer from "@/components/googleMapTest/VisglMapProvider";
 
 const PROVINCE_ZOOM = 11;
 const DISTRICT_ZOOM = 12.5;
 
 export default function TimSan() {
-    // const [geolocation, setGeolocation] = useState({});
+    const [geolocation, setGeolocation] = useState({});
 
     const [province, setProvince] = useState("");
     const [district, setDistrict] = useState("");
@@ -25,13 +26,28 @@ export default function TimSan() {
     const selectProvince = (value) => {
         setProvince(value);
         setDistrict("");
-        setViewState({
-
-        })
+        if (!value?.geolocation?.latitude && !value?.geolocation?.longitude) {
+            console.log("Error: Province geolocation not exist");
+        }
+        const newViewState = {
+            lat: value.geolocation.latitude,
+            lng: value?.geolocation?.longitude,
+            zoom: PROVINCE_ZOOM
+        };
+        setViewState(newViewState);
     };
 
     const selectDistrict = (value) => {
         setDistrict(value);
+        if (!value?.geolocation?.latitude && !value?.geolocation?.longitude) {
+            console.log("Error: District geolocation not exist");
+        }
+        const newViewState = {
+            lat: value.geolocation.latitude,
+            lng: value?.geolocation?.longitude,
+            zoom: DISTRICT_ZOOM
+        };
+        setViewState(newViewState);
     };
 
     return <div className={styles["tim-san-container"]}>
@@ -42,9 +58,10 @@ export default function TimSan() {
             district={district}
             selectDistrict={selectDistrict}
         />
-        {/* <MapboxMap viewState={viewState}/> */}
         <div className={styles["map-container"]}>
-            <VisglMap viewState={viewState} />
+            {/* <VisglMap viewState={viewState} /> */}
+            <VisglMapContainer />
         </div>
+        {/* <MapboxMap viewState={viewState}/> */}
     </div>;
 }

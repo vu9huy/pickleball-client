@@ -106,6 +106,7 @@
     width: 150px;
     padding: 12px 0;
     transition: 0.3s;
+    z-index: 1;
 }
 
 .desktop-link-children-item {

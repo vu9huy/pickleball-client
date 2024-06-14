@@ -2,23 +2,23 @@
 
 import React from "react";
 import { APIProvider } from "@vis.gl/react-google-maps";
-import styles from "./VisglMap.module.css";
-import VisglMapChild from "./VisglMapChild";
 import { GOOGLE_MAP_API_KEY, VIETNAME_REGION_CODE, VIETNAMESE_LANGUAGE_CODE } from "./VisglMapConstant";
+import VisglMap from "./visglMap/VisglMap";
+import styles from "./VisglMapProvider.module.css";
 
-const VisglMap = ({ viewState }) => {
+const VisglMapContainer = () => {
     return (
-        <div className={styles["visgl-map-container"]}>
+        <div className={styles["visgl-map-provider"]}>
             <APIProvider
-                apiKey={GOOGLE_MAP_API_KEY}
+                apiKey={""}
                 region={VIETNAME_REGION_CODE}
                 language={VIETNAMESE_LANGUAGE_CODE}
             >
-                < VisglMapChild viewState={viewState} />
+                <VisglMap />
             </APIProvider>
         </div>
     );
 };
 
 
-export default VisglMap;
+export default VisglMapContainer;
