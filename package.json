@@ -15,12 +15,14 @@
     "@tanstack/react-query": "^5.40.1",
     "@vis.gl/react-google-maps": "^1.0.2",
     "axios": "^1.7.2",
+    "keen-slider": "^6.8.6",
     "mapbox-gl": "^3.4.0",
     "next": "13.4.19",
     "next-seo": "^6.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-map-gl": "^7.1.7",
+    "react-responsive-carousel": "^3.2.23",
     "react-select": "^5.8.0"
   },
   "devDependencies": {

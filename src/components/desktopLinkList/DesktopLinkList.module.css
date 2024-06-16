@@ -26,7 +26,7 @@
     bottom: 7px;
     left: 5%;
     right: auto;
-    height: 2px;
+    height: 3px;
     transform: none;
     width: 0;
     transition: all 0.3s ease;
@@ -68,6 +68,15 @@
     transform: translateX(10px);
 }
 
+.desktop-link-children-item.link-active {
+    color: #ffffff;
+    transform: translateX(10px);
+}
+
+.desktop-link-children-item.link-active a:hover {
+    transform: translateX(0px);
+}
+
 .desktop-link-children-item a span {
     position: relative;
 }
@@ -81,8 +90,11 @@
     height: 2px;
     transform: none;
     width: 0;
-    transition: all 0.3s ease;
     background-color: #ffffff;
+}
+
+.desktop-link-children-item.link-active span:after {
+    width: 90%;
 }
 
 .desktop-link-children-item a:hover span:after {

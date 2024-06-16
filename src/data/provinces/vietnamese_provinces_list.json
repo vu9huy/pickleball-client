@@ -266,14 +266,6 @@
                 }
             },
             {
-                "value": "Thành phố Thủ Đức",
-                "label": "Quận 2",
-                "geolocation": {
-                    "latitude": 10.7871,
-                    "longitude": 106.7497
-                }
-            },
-            {
                 "value": "Quận 3",
                 "label": "Quận 3",
                 "geolocation": {

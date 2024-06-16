@@ -23,6 +23,7 @@ export default function TimSan() {
         zoom: null
     });
 
+
     const selectProvince = (value) => {
         setProvince(value);
         setDistrict("");
@@ -60,7 +61,9 @@ export default function TimSan() {
         />
         <div className={styles["map-container"]}>
             {/* <VisglMap viewState={viewState} /> */}
-            <VisglMapContainer />
+            <VisglMapContainer viewState={viewState} />
+        </div>
+        <div className="" style={{}}>
         </div>
         {/* <MapboxMap viewState={viewState}/> */}
     </div>;

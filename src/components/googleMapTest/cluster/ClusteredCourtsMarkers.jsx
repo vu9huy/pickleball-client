@@ -1,26 +1,27 @@
-import { useMap } from "@vis.gl/react-google-maps";
+// import { useMap } from "@vis.gl/react-google-maps";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
-import { TreeMarker } from "../marker/TreeMarker";
+import { CourtMarker } from "../marker/CourtMarker";
 import VisglInfoWindow from "../infoWindow/InfoWindow";
 import { ControlPanel } from "../controlPannel/ControlPannel";
+import { COURT_ZOOM, LAT_ZOOM_INFOWINDOW } from "../constants/VisglMapConstant";
 
 
-export const ClusteredCourtsMarkers = ({ courts, categories, setSelectedCategory }) => {
+export const ClusteredCourtsMarkers = ({ map, courts, categories, setSelectedCategory }) => {
     const [markers, setMarkers] = useState({});
-    const [selectedTreeKey, setSelectedTreeKey] = useState(null);
+    const [selectedCourtKey, setSelectedCourtKey] = useState(null);
 
-    const selectedTree = useMemo(
+    const selectedCourt = useMemo(
         () =>
-            courts && selectedTreeKey
-                ? courts.find(t => t.key === selectedTreeKey) || null
+            courts && selectedCourtKey
+                ? courts.find(t => t.key === selectedCourtKey) || null
                 : null,
-        [courts, selectedTreeKey]
+        [courts, selectedCourtKey]
     );
 
     // create the markerClusterer once the map is available and update it when
     // the markers are changed
-    const map = useMap();
+    // const map = useMap();
     const clusterer = useMemo(() => {
         if (!map) return null;
 
@@ -51,40 +52,44 @@ export const ClusteredCourtsMarkers = ({ courts, categories, setSelectedCategory
     }, []);
 
     const handleInfoWindowClose = useCallback(() => {
-        setSelectedTreeKey(null);
+        setSelectedCourtKey(null);
     }, []);
 
-    const handleMarkerClick = useCallback((tree) => {
-        setSelectedTreeKey(tree.key);
+    const handleMarkerClick = useCallback((court) => {
+        setSelectedCourtKey(court.key);
     }, []);
 
     const handleZoom = (selectedCourt) => {
-        console.log("selectedCourt", selectedCourt?.position);
-        map.setCenter(selectedCourt?.position);
-        map.setZoom(12);
+        const coordinates = {
+            // Cộng LAT_ZOOM_INFOWINDOW để zoom vào infowindow thay vì marker, nếu không cộng thì sẽ zoom vào marker và infowindow sẽ bị che mất
+            lat: selectedCourt?.position?.lat + LAT_ZOOM_INFOWINDOW,
+            lng: selectedCourt?.position?.lng
+        };
+        map.setCenter(coordinates);
+        map.setZoom(COURT_ZOOM);
     };
 
     return (
         <>
-            {courts.map(tree => (
-                <TreeMarker
-                    key={tree.key}
-                    tree={tree}
+            {courts.map(court => (
+                <CourtMarker
+                    key={court.key}
+                    court={court}
                     onClick={handleMarkerClick}
                     setMarkerRef={setMarkerRef}
                 />
             ))}
             <VisglInfoWindow
-                selectedTreeKey={selectedTreeKey}
+                selectedCourtKey={selectedCourtKey}
                 markers={markers}
                 handleInfoWindowClose={handleInfoWindowClose}
-                selectedTree={selectedTree}
+                selectedCourt={selectedCourt}
                 handleZoom={handleZoom}
             />
             <ControlPanel
                 categories={categories}
                 onCategoryChange={setSelectedCategory}
-                setSelectedTreeKey={setSelectedTreeKey}
+                setSelectedCourtKey={setSelectedCourtKey}
             />
         </>
     );

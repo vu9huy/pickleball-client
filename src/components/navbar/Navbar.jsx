@@ -21,24 +21,24 @@ const Navbar = () => {
             path: "/huong-dan"
         },
         {
-            label: "Blogs",
-            path: "/blogs"
+            label: "Blog",
+            path: "/blog"
         },
         {
-            label: "Giao lưu",
-            path: "/giao-lưu",
+            label: "Cộng đồng",
+            path: "/cong-dong",
             children: [
                 {
                     label: "Khóa học",
-                    path: "/khoa-hoc"
+                    path: "/cong-dong/khoa-hoc"
                 },
                 {
                     label: "Giáo viên",
-                    path: "/giao-vien"
+                    path: "/cong-dong/giao-vien"
                 },
                 {
                     label: "Câu lạc bộ",
-                    path: "/clb"
+                    path: "/cong-dong/clb"
                 }
             ]
         }

@@ -1,21 +1,40 @@
 "use client";
 
 import { ClusteredCourtsMarkers } from "../cluster/ClusteredCourtsMarkers";
-import { Map } from "@vis.gl/react-google-maps";
-import { getCategories, loadCourtDataset } from "../data/courts";
+import { Map, useMap } from "@vis.gl/react-google-maps";
+import { getCategories, loadCourtDataset } from "../../../data/courts/courts";
 import { useState, useEffect, useMemo } from "react";
-import { ControlPanel } from "../controlPannel/ControlPannel";
-import { GOOGLE_MAP_MAP_ID, VIETNAME_BOUND, VIETNAME_CENTER_COORDINATES, COUNTRY_ZOOM } from "../VisglMapConstant";
+import { GOOGLE_MAP_MAP_ID, VIETNAME_BOUND, VIETNAME_CENTER_COORDINATES, COUNTRY_ZOOM } from "../constants/VisglMapConstant";
 
-const VisglMap = () => {
+const convertCurrentView = (viewState, VIETNAME_CENTER_COORDINATES) => {
+    const result = viewState?.lat && viewState?.lng ? viewState : VIETNAME_CENTER_COORDINATES;
+    return result;
+};
 
-    const [courts, setCourts] = useState();
+const convertCurrentZoom = (viewState, COUNTRY_ZOOM) => {
+    const result = viewState?.zoom && viewState?.zoom != 0 ? viewState?.zoom : COUNTRY_ZOOM;
+    return result;
+};
+
+const VisglMap = ({ viewState }) => {
+
+    const [courts, setCourts] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState(null);
 
     // load data asynchronously
     useEffect(() => {
         loadCourtDataset().then(data => setCourts(data));
     }, []);
+
+    const map = useMap();
+    const currentView = convertCurrentView(viewState, VIETNAME_CENTER_COORDINATES);
+    const currentZoom = convertCurrentZoom(viewState, COUNTRY_ZOOM);
+
+    useEffect(() => {
+        if (!map) return;
+        map.setCenter(currentView);
+        map.setZoom(currentZoom);
+    }, [map, currentView.lat, currentView.lng, currentZoom]);
 
     // get category information for the filter-dropdown
     const categories = useMemo(() => getCategories(courts), [courts]);
@@ -44,13 +63,9 @@ const VisglMap = () => {
             // }}
             >
                 {filteredCourts ?
-                    <ClusteredCourtsMarkers courts={filteredCourts} categories={categories} setSelectedCategory={setSelectedCategory} /> :
+                    <ClusteredCourtsMarkers map={map} courts={filteredCourts} categories={categories} setSelectedCategory={setSelectedCategory} /> :
                     ""}
             </Map>
-            {/* <ControlPanel
-                categories={categories}
-                onCategoryChange={setSelectedCategory}
-            /> */}
         </>
     );
 };

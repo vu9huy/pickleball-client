@@ -6,7 +6,8 @@
     --text-light-1: #a1a1a1;
     --text-light-2: #d0d0d0;
     --primary-color: #99de47;
-    --secondary-color: #ccce2e;
+    --secondary-color: #a7de66;
+    --primary-2-color: #ccce2e;
     --page-max-width: 1192px;
 }
 
@@ -36,7 +37,13 @@ li {
     color: var(--textColor);
 }
 
-
+.button {
+    border: none;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    cursor: pointer;
+    padding: 12px 12px;
+}
 
 /* .wrapper {
     max-width: 1536px;

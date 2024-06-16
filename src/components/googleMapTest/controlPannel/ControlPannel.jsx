@@ -1,10 +1,10 @@
 import React, { useCallback } from "react";
 
 
-export const ControlPanel = ({ categories, onCategoryChange, setSelectedTreeKey }) => {
+export const ControlPanel = ({ categories, onCategoryChange, setSelectedCourtKey }) => {
     const handleCategoryChange = useCallback(
         (e) => {
-            setSelectedTreeKey(null);
+            setSelectedCourtKey(null);
             onCategoryChange(e.target.value || null);
         },
         [onCategoryChange]

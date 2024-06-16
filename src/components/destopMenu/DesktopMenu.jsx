@@ -4,7 +4,6 @@ import styles from "./DesktopMenu.module.css";
 
 const DesktopMenu = ({ menu }) => {
 
-
     return (
         <div className={styles["desktop-menu-container"]}>
             <DesktopLinkList linkList={menu} />

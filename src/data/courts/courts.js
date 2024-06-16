@@ -7,9 +7,10 @@ for (let i = 0; i < courts.length; i++) {
 
 export async function loadCourtDataset() {
     // simulate loading the courts from an external source
-    return new Promise(resolve => {
-        setTimeout(() => resolve(courts), 500);
-    });
+    // return new Promise(resolve => {
+    //     setTimeout(() => resolve(courts), 500);
+    // });
+    return courts;
 }
 
 export function getCategories(courts) {

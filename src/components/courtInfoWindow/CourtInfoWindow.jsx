@@ -1,21 +1,33 @@
-import Image from "next/image";
 import styles from "./CourtInfoWindow.module.css";
 import Link from "next/link";
+import ReactResponsiveCarousel from "../slider/ReactResposiveCarousel";
 
-const CourtInfoWindow = ({ court }) => {
+const CourtInfoWindow = ({ court, loading, handleInfoWindowClose, handleZoom }) => {
+
+    console.log("court", court);
 
     return (
         <div className={styles["court-info-window-container"]}>
-            <h2 className={styles["court-info-window-title"]}>{court.title}</h2>
-            <p className={styles["court-info-window-description"]}>{court.description}</p>
-            <div className={styles["court-info-window-images-wrapper"]}>
-                {court.images.map((image, index) => {
-                    return <Image key={index} src={image.url} alt={image.alt} width={50} height={50} />;
-                })}
+            <div className={styles["court-info-window-close-button"]} onClick={handleInfoWindowClose}>
+                <p>+</p>
             </div>
-            <Link className={styles["court-info-window-google-map-link"]} target="_blank" rel="noopener noreferrer nofollow" href={`https://maps.google.com/?q=${court.latitude},${court.longitude}`} passHref={true}>
-                Mở trong google map
-            </Link>
+            <div className={styles["court-info-window-header"]} >
+                <h2 className={styles["court-info-window-title"]}>{court.name}</h2>
+            </div>
+            <div className={styles["court-info-window-body"]}>
+                <Link className={styles["court-info-window-google-map-link"]} target="_blank" rel="noopener noreferrer " href={`/courts/${court.id}`} passHref={true}>
+                    <button className={`${styles["court-info-window-go-to-court"]} button`}>Xem chi tiết</button>
+
+                </Link>
+                <p className={styles["court-info-window-description"]}>{court.description}</p>
+                <div className={styles["court-info-window-images-list"]}>
+                    <ReactResponsiveCarousel images={court.images} />
+                </div>
+                <Link className={styles["court-info-window-google-map-link"]} target="_blank" rel="noopener noreferrer nofollow" href={`https://maps.google.com/?q=${court?.position?.lat},${court?.position?.lng}`} passHref={true}>
+                    Xem trên google map
+                </Link>
+                <button className={`${styles["court-info-window-google-map-zoom-button"]} button`} onClick={() => handleZoom(court)}>Zoom gần</button>
+            </div>
         </div >
     );
 };

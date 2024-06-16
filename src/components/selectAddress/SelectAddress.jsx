@@ -3,7 +3,7 @@
 import React from "react";
 import Select from "react-select";
 import styles from "./SelectAddress.module.css";
-import vietnameseProvincesData from "@/data/vietnamese_provinces_list.json";
+import vietnameseProvincesData from "@/data/provinces/vietnamese_provinces_list.json";
 
 const SelectAddress = ({ province, selectProvince, district, selectDistrict }) => {
 
@@ -16,6 +16,8 @@ const SelectAddress = ({ province, selectProvince, district, selectDistrict }) =
             <Select
                 options={vietnameseProvincesData}
                 onChange={(value) => selectProvince(value)}
+                value={province}
+                placeholder="Chọn tỉnh/thành"
             />
         </div>
 
@@ -29,6 +31,8 @@ const SelectAddress = ({ province, selectProvince, district, selectDistrict }) =
                 options={province?.districts ? province?.districts : []}
                 onChange={(value) => selectDistrict(value)}
                 isDisabled={!province?.districts}
+                value={district}
+                placeholder="Chọn quận/huyện (cho HN và TP.HCM)"
             />
         </div>
 
