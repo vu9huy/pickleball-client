@@ -5,8 +5,7 @@ import styles from "./page.module.css";
 import { useState } from "react";
 import SelectAddress from "@/components/selectAddress/SelectAddress";
 import MapboxMap from "@/components/mapbox/MapBox";
-import VisglMap from "@/components/googleMap/VisglMap";
-import VisglMapContainer from "@/components/googleMapTest/VisglMapProvider";
+import VisglMapContainer from "@/components/googleMap/VisglMapProvider";
 
 const PROVINCE_ZOOM = 11;
 const DISTRICT_ZOOM = 12.5;
@@ -53,14 +52,13 @@ export default function TimSan() {
 
     return <div className={styles["tim-san-container"]}>
         {/* <Geolocation geolocation={geolocation} setGeolocation={setGeolocation} /> */}
-        <SelectAddress
+        {/* <SelectAddress
             province={province}
             selectProvince={selectProvince}
             district={district}
             selectDistrict={selectDistrict}
-        />
+        /> */}
         <div className={styles["map-container"]}>
-            {/* <VisglMap viewState={viewState} /> */}
             <VisglMapContainer viewState={viewState} />
         </div>
         <div className="" style={{}}>

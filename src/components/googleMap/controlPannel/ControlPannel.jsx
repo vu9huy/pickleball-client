@@ -1,7 +1,6 @@
 import React, { useCallback } from "react";
 
-
-export const ControlPanel = ({ categories, onCategoryChange, setSelectedCourtKey }) => {
+const MarkerControlPanel = ({ categories, onCategoryChange, setSelectedCourtKey }) => {
     const handleCategoryChange = useCallback(
         (e) => {
             setSelectedCourtKey(null);
@@ -27,3 +26,4 @@ export const ControlPanel = ({ categories, onCategoryChange, setSelectedCourtKey
         </div>
     );
 };
+export default MarkerControlPanel;

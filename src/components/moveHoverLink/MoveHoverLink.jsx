@@ -1,12 +1,12 @@
 import Link from "next/link";
 import styles from "./MoveHoverLink.module.css";
 
-const MoveHoverLink = ({ href, label }) => {
+const MoveHoverLink = ({ href, target, rel, children }) => {
 
     return (
-        <Link href={href} className={styles["move-hover-link"]}>
-            <span>{label}</span>
-        </Link>
+        <Link href={href ? href : "#"} target={target ? target : ""} rel={rel ? rel : ""} className={styles["move-hover-link"]} >
+            {children}
+        </Link >
     );
 };
 export default MoveHoverLink;

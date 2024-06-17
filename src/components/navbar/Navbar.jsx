@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 import AuthLink from "../authLink/AuthLink";
-import LinkList from "../desktopLinkList/DesktopLinkList";
+import LinkList from "../destopMenu/desktopLinkList/DesktopLinkList";
 import Logo from "../logo/Logo";
 import DesktopMenu from "../destopMenu/DesktopMenu";
+import MobileMenu from "../mobileMenu/MobileMenu";
 
 const Navbar = () => {
 
@@ -52,7 +53,8 @@ const Navbar = () => {
                     <LinkList linkList={menu} />
                     <AuthLink />
                 </div> */}
-                <DesktopMenu menu={menu} />
+                {/* <DesktopMenu menu={menu} /> */}
+                <MobileMenu menu={menu} />
             </div>
         </div>
     );

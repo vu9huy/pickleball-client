@@ -30,20 +30,25 @@ const Footer = () => {
                     <ul className={styles["footer-item-content"]}>
                         <li className={styles["footer-item-content-item"]}>
                             <span>facebook</span>
-                            {/* <a rel="nofollow" href="https://facebook.com/vu9huy">Facebook</a> */}
-                            <MoveHoverLink href={"https://facebook.com/vu9huy"} label={"Facebook"} />
+                            <MoveHoverLink href={"https://facebook.com/vu9huy"} target={"_blank"} rel={"nofollow"}>
+                                <span>Facebook</span>
+                            </MoveHoverLink>
                         </li>
                         <li className={styles["footer-item-content-item"]}>
-                            <a href="mailto:quan2704vu@gmail.com">quan2704vu@gmail.com</a>
+                            <MoveHoverLink href={"mailto:quan2704vu@gmail.com"} >
+                                <span>quan2704vu@gmail.com</span>
+                            </MoveHoverLink>
                         </li>
                         <li className={styles["footer-item-content-item"]}>
-                            <a href="tel:0352221999">0352221999</a>
+                            <MoveHoverLink href={"mailto:quan2704vu@gmail.com"} label={"0352221999"} >
+                                <span>0352221999</span>
+                            </MoveHoverLink>
                         </li>
                     </ul>
                 </div>
             </div>
             <div className={styles["coppy-right"]}>
-                <p>vu9huy©2024</p>
+                <p>@vu9huy©2024</p>
             </div>
         </div>
     );

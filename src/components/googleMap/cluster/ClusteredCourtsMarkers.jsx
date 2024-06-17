@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import { CourtMarker } from "../marker/CourtMarker";
 import VisglInfoWindow from "../infoWindow/InfoWindow";
-import { ControlPanel } from "../controlPannel/ControlPannel";
+import MarkerControlPanel from "../controlPannel/ControlPannel";
 import { COURT_ZOOM, LAT_ZOOM_INFOWINDOW } from "../constants/VisglMapConstant";
 
 
@@ -86,11 +86,11 @@ export const ClusteredCourtsMarkers = ({ map, courts, categories, setSelectedCat
                 selectedCourt={selectedCourt}
                 handleZoom={handleZoom}
             />
-            <ControlPanel
+            {/* <MarkerControlPanel
                 categories={categories}
                 onCategoryChange={setSelectedCategory}
                 setSelectedCourtKey={setSelectedCourtKey}
-            />
+            /> */}
         </>
     );
 };

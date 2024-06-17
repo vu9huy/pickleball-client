@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useId } from "react";
 import Select from "react-select";
 import styles from "./SelectAddress.module.css";
 import vietnameseProvincesData from "@/data/provinces/vietnamese_provinces_list.json";
@@ -15,6 +15,7 @@ const SelectAddress = ({ province, selectProvince, district, selectDistrict }) =
             </p>
             <Select
                 options={vietnameseProvincesData}
+                instanceId={useId()}
                 onChange={(value) => selectProvince(value)}
                 value={province}
                 placeholder="Chọn tỉnh/thành"
@@ -29,6 +30,7 @@ const SelectAddress = ({ province, selectProvince, district, selectDistrict }) =
             {/* <p className={styles["select-address-note"]}>*Chỉ áp dụng cho Hà Nội và thành phố Hồ Chí Minh</p> */}
             <Select
                 options={province?.districts ? province?.districts : []}
+                instanceId={useId()}
                 onChange={(value) => selectDistrict(value)}
                 isDisabled={!province?.districts}
                 value={district}

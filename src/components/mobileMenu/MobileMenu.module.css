@@ -1,0 +1,15 @@
+.mobile-menu-container {
+    position: relative;
+}
+
+.mobile-menu-icon {}
+
+.mobile-menu-body {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    /* display: flex;
+    flex-direction: column; */
+    z-index: 100;
+    width: 200px;
+}

@@ -51,12 +51,12 @@ const VisglMap = ({ viewState }) => {
                 style={{ width: "100%", height: "100%" }}
                 defaultCenter={VIETNAME_CENTER_COORDINATES}
                 defaultZoom={COUNTRY_ZOOM}
-                // minZoom={5.5}
-                // maxZoom={18}
                 gestureHandling={"greedy"}
                 // gestureHandling={"cooperative"}
                 disableDefaultUI={true}
                 reuseMaps={true}
+            // minZoom={5.5}
+            // maxZoom={18}
             // restriction={{
             //     latLngBounds: VIETNAME_BOUND,
             //     strictBounds: true

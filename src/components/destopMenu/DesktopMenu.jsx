@@ -1,5 +1,5 @@
 // import AuthLink from "../authLink/AuthLink";
-import DesktopLinkList from "../desktopLinkList/DesktopLinkList";
+import DesktopLinkList from "./desktopLinkList/DesktopLinkList";
 import styles from "./DesktopMenu.module.css";
 
 const DesktopMenu = ({ menu }) => {
