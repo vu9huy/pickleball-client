@@ -1,19 +1,36 @@
 .mobile-link-list-container {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     background-color: var(--dark-bg);
     color: #ffffff;
-    padding: 8px 8px 8px 16px;
+    padding: 16px 8px 8px 28px;
     font-family: var(--font-barlow-condensed);
 }
+
+.mobile-link-list-close-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.mobile-link-list-close-button {
+    font-size: 30px;
+    line-height: 1;
+    background-color: #ffffff;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-link-list-wrapper {}
 
 .mobile-link-item {
     cursor: pointer;
     position: relative;
-    text-transform: uppercase;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 22px;
     width: 100%;
     transition: transform 0.3s ease;
     --webkit-transition: transform 0.3s ease;
@@ -21,6 +38,7 @@
 }
 
 .mobile-link-item>a span {
+    text-transform: uppercase;
     position: relative;
 }
 
@@ -36,11 +54,11 @@
     background-color: #ffffff;
 }
 
-.mobile-link-item.link-active span:after {
+.mobile-link-item.link-active>a span:after {
     width: 100%;
 }
 
-.mobile-link-item:hover span:after {
+.mobile-link-item:hover>a span:after {
     width: 100%;
 }
 
@@ -62,17 +80,40 @@
 
 .mobile-link-item.link-active {
     color: #ffffff;
-    transform: translateX(4px);
+    transform: translateX(8px);
 }
 
 .mobile-link-children-list {
+    padding-left: 30px;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: max-height 0.5s ease-out;
 }
 
 .mobile-link-children-list.open {
     max-height: 100%;
 }
 
-.mobile-link-children-item.link-active {}
+.mobile-link-children-item span {
+    position: relative;
+}
+
+.mobile-link-children-item:hover span {
+    font-size: 20px;
+}
+
+.mobile-link-children-item span:after {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    z-index: 10;
+    bottom: -4px;
+    height: 2px;
+    transform: none;
+    width: 0;
+    background-color: #ffffff;
+}
+
+.mobile-link-children-item.link-active span:after {
+    width: 100%;
+}

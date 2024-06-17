@@ -23,36 +23,41 @@ const MobileLinkList = ({ linkList }) => {
     };
 
     return (
-        <ul className={`${barlowCondensed.variable} ${styles["mobile-link-list-container"]}`}>
-            {linkList?.map(link => {
-                const isActive = checkActiveNavLinkFunc({ linkPath: link.path, pathname });
-                if (link?.children) {
-                    return (<li key={link.path} onClick={() => handleOpenMenu(link.path)} className={`${styles["mobile-link-item"]} ${isActive ? styles["link-active"] : ""}`}>
-                        <a>
-                            <span>{link.label}&nbsp;</span>
-                            {/* <p>{"=>"}</p> */}
-                        </a>
-                        <ul className={`${styles["mobile-link-children-list"]} ${pathLink == link.path ? styles["open"] : ""}`}>
-                            {link?.children?.map(childLink => {
-                                const isActive = checkActiveNavLinkFunc({ linkPath: childLink.path, pathname });
-                                return (
-                                    <li className={`${styles["mobile-link-children-item"]} ${isActive ? styles["link-active"] : ""}`} key={childLink.path}>
-                                        <Link href={childLink.path}>
-                                            <span>{childLink.label}</span>
-                                        </Link>
-                                    </li>
-                                );
-                            })}
-                        </ul>
+        <div className={`${barlowCondensed.variable} ${styles["mobile-link-list-container"]}`}>
+            <div className={styles["mobile-link-list-close-wrapper"]}>
+                <button className={styles["mobile-link-list-close-button"]}>X</button>
+            </div>
+            <ul className={styles["mobile-link-list-wrapper"]}>
+                {linkList?.map(link => {
+                    const isActive = checkActiveNavLinkFunc({ linkPath: link.path, pathname });
+                    if (link?.children) {
+                        return (<li key={link.path} onClick={() => handleOpenMenu(link.path)} className={`${styles["mobile-link-item"]} ${isActive ? styles["link-active"] : ""}`}>
+                            <a>
+                                <span>{link.label}&nbsp;</span>
+                                {/* <p>{"=>"}</p> */}
+                            </a>
+                            <ul className={`${styles["mobile-link-children-list"]} ${pathLink == link.path || isActive ? styles["open"] : ""}`}>
+                                {link?.children?.map(childLink => {
+                                    const isActive = checkActiveNavLinkFunc({ linkPath: childLink.path, pathname });
+                                    return (
+                                        <li className={`${styles["mobile-link-children-item"]} ${isActive ? styles["link-active"] : ""}`} key={childLink.path}>
+                                            <Link href={childLink.path}>
+                                                <span>{childLink.label}</span>
+                                            </Link>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </li>);
+                    }
+                    return (<li key={link.path} onClick={() => handleOpenMenu(link.path)} className={`${styles["mobile-link-item"]} ${isActive ? styles["link-active"] : ""}`} >
+                        <Link href={link.path}>
+                            <span>{link.label}</span>
+                        </Link>
                     </li>);
-                }
-                return (<li key={link.path} onClick={() => handleOpenMenu(link.path)} className={`${styles["mobile-link-item"]} ${isActive ? styles["link-active"] : ""}`} >
-                    <Link href={link.path}>
-                        <span>{link.label}</span>
-                    </Link>
-                </li>);
-            })}
-        </ul>
+                })}
+            </ul>
+        </div>
     );
 };
 export default MobileLinkList;

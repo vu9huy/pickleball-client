@@ -3,7 +3,6 @@ import MobileLinkList from "./mobileLinkList/MobileLinkList";
 
 const MobileMenu = ({ menu }) => {
 
-
     return (
         <div className={styles["mobile-menu-container"]}>
             <div className={styles["mobile-menu-icon"]}>OOO</div>

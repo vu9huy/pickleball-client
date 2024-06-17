@@ -53,7 +53,7 @@ const Navbar = () => {
                     <LinkList linkList={menu} />
                     <AuthLink />
                 </div> */}
-                {/* <DesktopMenu menu={menu} /> */}
+                <DesktopMenu menu={menu} />
                 <MobileMenu menu={menu} />
             </div>
         </div>
