@@ -20,11 +20,11 @@
     transform: translateX(0px);
 }
 
-.mobile-link-item span {
+.mobile-link-item>a span {
     position: relative;
 }
 
-.mobile-link-item span:after {
+.mobile-link-item>a span:after {
     content: "" !important;
     display: block !important;
     position: absolute;
@@ -57,19 +57,18 @@
 
 .mobile-link-item:hover {
     color: #ffffff;
-    transform: translateX(10px);
+    /* transform: translateX(4px); */
 }
 
 .mobile-link-item.link-active {
     color: #ffffff;
-    transform: translateX(10px);
+    transform: translateX(4px);
 }
 
 .mobile-link-children-list {
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
-
 }
 
 .mobile-link-children-list.open {
