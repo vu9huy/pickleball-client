@@ -1,0 +1,8 @@
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="sprites-icon-menu">
+    <path stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="sprites-icon-close">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+  </symbol>
+</svg>

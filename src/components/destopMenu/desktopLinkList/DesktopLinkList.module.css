@@ -7,13 +7,13 @@
 }
 
 .desktop-link-item {
-    padding: 16px;
+    padding: 16px 12px;
     cursor: pointer;
     position: relative;
     text-align: center;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     font-family: var(--font-barlow-condensed);
 }
 

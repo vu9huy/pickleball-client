@@ -5,6 +5,7 @@ import LinkList from "../destopMenu/desktopLinkList/DesktopLinkList";
 import Logo from "../logo/Logo";
 import DesktopMenu from "../destopMenu/DesktopMenu";
 import MobileMenu from "../mobileMenu/MobileMenu";
+import { IconSprites1 } from "../iconSprites/IconSprites";
 
 const Navbar = () => {
 
