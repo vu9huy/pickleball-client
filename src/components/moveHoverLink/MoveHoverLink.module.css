@@ -14,11 +14,11 @@
     transform: translateX(10px);
 }
 
-.move-hover-link span {
+.move-hover-link>span {
     position: relative;
 }
 
-.move-hover-link span:after {
+.move-hover-link>span:after {
     content: "" !important;
     display: block !important;
     position: absolute;
@@ -31,6 +31,6 @@
     background-color: #ffffff;
 }
 
-.move-hover-link:hover span:after {
-    width: 90%;
+.move-hover-link:hover>span:after {
+    width: 100%;
 }

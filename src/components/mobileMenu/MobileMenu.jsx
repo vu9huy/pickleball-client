@@ -20,7 +20,7 @@ const MobileMenu = ({ menu }) => {
     return (
         <div className={styles["mobile-menu-container"]}>
             <div className={styles["mobile-menu-open-button"]} onClick={() => handleOpenMenu()}>
-                <IconSprites1 id={"sprites-icon-menu"} stroke="#000000" width="40px" height="40px" />
+                <IconSprites1 id={"sprites-icon-menu"} className={styles["mobile-menu-open-button-icon"]} />
             </div>
             <div className={`${styles["mobile-menu-body"]} ${styles[openMenu ? "open" : ""]}`}>
                 <MobileLinkList linkList={menu} openMenu={openMenu} handleCloseMenu={handleCloseMenu} />
