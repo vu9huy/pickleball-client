@@ -20,7 +20,7 @@ export const clusterCountLayer = {
         "text-field": "{point_count_abbreviated}",
         "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
         "text-size": 12
-        // "icon-image": "./logo-fit-96x96.png"
+        // "icon-image": "./images/logo-fit-96x96.png"
     }
 };
 

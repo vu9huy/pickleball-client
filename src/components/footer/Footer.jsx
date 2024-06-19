@@ -32,9 +32,7 @@ const Footer = () => {
                         <li className={styles["footer-item-content-item"]}>
                             <MoveHoverLink href={"https://facebook.com/vu9huy"} target={"_blank"} rel={"nofollow"}>
                                 <span className={styles["footer-item-social-wrapper"]}>
-                                    <div className={styles["footer-item-social-icon-wrapper"]}>
-                                        <IconSprites1 id="sprites-icon-facebook" className={styles["footer-item-social-icon"]} width="20px" height="20px" fill="#ffffff" />
-                                    </div>
+                                    <IconSprites1 id="sprites-icon-facebook" className={styles["footer-item-social-icon"]} width="20px" height="20px" fill="#ffffff" />
                                     facebook
                                 </span>
                             </MoveHoverLink>

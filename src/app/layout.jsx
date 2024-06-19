@@ -19,10 +19,54 @@ export const metadata = {
     },
     description:
         "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
+    keywords: [
+        "sân pickleball",
+        "san pickleball",
+        "pickleball",
+        "sân pickleball hà nội",
+        "san pickleball ha noi",
+        "chơi pickleball",
+        "choi pickleball",
+        "hướng dẫn chơi pickleball",
+        "huong dan choi pickleball",
+        "pickleball là gì",
+        "pickleball la gi"
+    ],
     openGraph: {
-        siteName: "Sân Pickleball",
         type: "website",
-        locale: "vi_VN"
+        description:
+            "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
+        url: "https://sanpickleball.com",
+        title: "Sân Pickleball",
+        locale: "vi_VN",
+        siteName: "Sân Pickleball",
+        images: [
+            {
+                url: "images/san-pickleball.webp", // Must be an absolute URL, tỉ lệ 1200:630
+                width: 1200,
+                height: 630,
+                alt: "sân pickleball"
+            }
+        ]
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Sân Pickleball",
+        description:
+            "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
+        creator: "@vu9huy",
+        site: "@sanpickleball",
+        images: [
+            {
+                url: "images/san-pickleball.webp", // Must be an absolute URL
+                width: 1200,
+                height: 630,
+                alt: "sân pickleball"
+            }
+        ]
+    },
+    alternates: {
+        canonical: "https://sanpickleball.com"
     },
     metadataBase: new URL("https://sanpickleball.com"),
     alternates: {
@@ -44,6 +88,7 @@ export const metadata = {
     },
     verification: {
         other: {
+            //Bing search console
             "msvalidate.01": ["4ae656febbb7b281f0b75ac157bb5044"]
         }
     },
@@ -54,7 +99,7 @@ export const metadata = {
                 type: "image/x-icon"
             },
             {
-                url: "logo-fit-96x96.png",
+                url: "images/logo-fit-96x96.png",
                 sizes: "96x96",
                 type: "image/png"
             }
@@ -67,7 +112,7 @@ export const metadata = {
         ],
         apple: [
             {
-                url: "logo-fit-96x96.png",
+                url: "images/logo-fit-96x96.png",
                 sizes: "96x96",
                 type: "image/png"
             }
@@ -78,7 +123,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
+        <html lang="vi">
             <body className={dm_sans.className} >
                 <div className="container">
                     <div className="wrapper">

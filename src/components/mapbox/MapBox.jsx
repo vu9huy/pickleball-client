@@ -14,11 +14,11 @@ const courtList = [
         description: "Description for Point 1",
         owner: "Quân Vũ",
         images: [{
-            url: "/san-pickleball.jpeg",
+            url: "images/san-pickleball.webp",
             alt: "sân picklball 1"
         },
         {
-            url: "/san-pickleball.jpeg",
+            url: "images/san-pickleball.webp",
             alt: "sân picklball 2"
         }]
     },
@@ -30,11 +30,11 @@ const courtList = [
         description: "Description for Point 2",
         owner: "Quân Vũ",
         images: [{
-            url: "/san-pickleball.jpeg",
+            url: "images/san-pickleball.webp",
             alt: "sân picklball 1"
         },
         {
-            url: "/san-pickleball.jpeg",
+            url: "images/san-pickleball.webp",
             alt: "sân picklball 2"
         }]
     },
@@ -46,11 +46,11 @@ const courtList = [
         description: "Description for Point 3",
         owner: "Quân Vũ",
         images: [{
-            url: "/san-pickleball.jpeg",
+            url: "images/san-pickleball.webp",
             alt: "sân picklball 1"
         },
         {
-            url: "/san-pickleball.jpeg",
+            url: "images/san-pickleball.webp",
             alt: "sân picklball 2"
         }]
     }
