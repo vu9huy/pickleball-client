@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Footer.module.css";
 import { HeaderComp } from "../header/HeaderComp";
 import MoveHoverLink from "../moveHoverLink/MoveHoverLink";
+import { IconSprites1 } from "../iconSprites/IconSprites";
 
 const Footer = () => {
 
@@ -29,9 +30,13 @@ const Footer = () => {
                     </div>
                     <ul className={styles["footer-item-content"]}>
                         <li className={styles["footer-item-content-item"]}>
-                            <span>facebook</span>
                             <MoveHoverLink href={"https://facebook.com/vu9huy"} target={"_blank"} rel={"nofollow"}>
-                                <span>Facebook</span>
+                                <span className={styles["footer-item-social-wrapper"]}>
+                                    <div className={styles["footer-item-social-icon-wrapper"]}>
+                                        <IconSprites1 id="sprites-icon-facebook" className={styles["footer-item-social-icon"]} width="20px" height="20px" fill="#ffffff" />
+                                    </div>
+                                    facebook
+                                </span>
                             </MoveHoverLink>
                         </li>
                         <li className={styles["footer-item-content-item"]}>

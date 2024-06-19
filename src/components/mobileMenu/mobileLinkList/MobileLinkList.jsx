@@ -32,7 +32,7 @@ const MobileLinkList = ({ linkList, handleCloseMenu }) => {
         <div className={`${barlowCondensed.variable} ${styles["mobile-link-list-container"]}`}>
             <div className={styles["mobile-link-list-close-wrapper"]} onClick={() => handleCloseMenu()}>
                 <button className={styles["mobile-link-list-close-button"]}>
-                    <IconSprites1 id={"sprites-icon-close"} stroke="#000000" width="36px" height="36px" />
+                    <IconSprites1 id={"sprites-icon-close"} className={styles["mobile-link-list-close-button-icon"]} />
                 </button>
             </div>
             <ul className={styles["mobile-link-list-wrapper"]}>
