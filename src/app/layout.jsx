@@ -5,6 +5,7 @@ import Footer from "@/components/footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "@/components/navbar/Navbar";
 import { dm_sans } from "./fonts/googleFont";
+import { keywords } from "@/metadata/universal/keywords";
 
 
 export const viewport = {
@@ -19,19 +20,7 @@ export const metadata = {
     },
     description:
         "Sân Pickleball - Tìm kiếm và đặt sân pickleball trên toàn quốc",
-    keywords: [
-        "sân pickleball",
-        "san pickleball",
-        "pickleball",
-        "sân pickleball hà nội",
-        "san pickleball ha noi",
-        "chơi pickleball",
-        "choi pickleball",
-        "hướng dẫn chơi pickleball",
-        "huong dan choi pickleball",
-        "pickleball là gì",
-        "pickleball la gi"
-    ],
+    keywords: keywords,
     openGraph: {
         type: "website",
         description:
