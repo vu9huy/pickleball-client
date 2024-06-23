@@ -8,7 +8,7 @@ const Logo = () => {
 
     return (
         <Link href={"/"} className={styles["logo-container"]}>
-            <Image src={"/logo-fit-96x96.webp"} alt="logo" width={50} height={50} />
+            <Image src={"/images/logo-fit-96x96.webp"} alt="logo" width={50} height={50} />
             <span className={styles["text-logo"]}>
                 Sân Pickleball
             </span>

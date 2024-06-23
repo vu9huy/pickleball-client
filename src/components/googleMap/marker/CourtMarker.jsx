@@ -14,7 +14,7 @@ export const CourtMarker = (props) => {
 
     return (
         <AdvancedMarker position={court.position} ref={ref} onClick={handleClick}>
-            <Image src="/logo-fit-96x96.png" alt="court marker" width={45} height={45} />
+            <Image src="/images/logo-fit-96x96.png" alt="court marker" width={45} height={45} />
         </AdvancedMarker>
     );
 };

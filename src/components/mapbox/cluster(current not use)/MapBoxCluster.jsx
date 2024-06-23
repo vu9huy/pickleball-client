@@ -194,7 +194,7 @@ const MapBoxCluster = () => {
                         onClick={() => alert("marker was clicked!")}
                         title={"clickable google.maps.Marker"}
                     >
-                        <img src="./logo-fit-96x96.png" style={customMarkerStyle} />
+                        <img src="./images/logo-fit-96x96.png" style={customMarkerStyle} />
                     </Marker>
                 );
             })}

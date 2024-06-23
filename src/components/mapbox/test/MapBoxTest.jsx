@@ -58,7 +58,7 @@ const MapBoxTest = () => {
                         point={point}
                         onClick={() => handleMarkerClick(point)}
                     /> */}
-                    <img src="./logo-fit-96x96.png" style={customMarkerStyle} />
+                    <img src="./images/logo-fit-96x96.png" style={customMarkerStyle} />
                 </Marker>
             ))}
 
