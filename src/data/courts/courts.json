@@ -1,522 +1,332 @@
 [
     {
-        "id": "43789832",
-        "name": "Sân Việt Hưng",
-        "category": "ash",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
+        "_id": "66770348275ce2a3185df9d1",
+        "name": "Hà Nội Pickleball Center",
+        "description": "A modern pickleball center located in the heart of Hà Nội.",
+        "location": {
+            "address": "123 Hoàn Kiếm, Hoàn Kiếm District",
+            "province": "Hà Nội",
+            "district": "Hoàn Kiếm"
+        },
+        "geolocation": {
+            "latitude": 21.028511,
+            "longitude": 105.848217
         },
         "images": [
             {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
+                "url": "https://example.com/image1.jpg",
+                "alt": "Hà Nội Pickleball Center Court"
             }
         ],
-        "position": {
-            "lat": 21.02842155004115,
-            "lng": 105.7944144580447
+        "feature": {
+            "lighting": true,
+            "indoor": true,
+            "canopy": false,
+            "rentThings": true,
+            "freeTrainer": false,
+            "others": [
+                {
+                    "key": "parking",
+                    "value": "available"
+                }
+            ]
         }
     },
     {
-        "id": "4545673",
-        "name": "Sân An Khánh",
-        "category": "oak",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
+        "_id": "66770348275ce2a3185df9d2",
+        "name": "Hoàn Kiếm Pickleball Club",
+        "description": "Friendly club with excellent facilities.",
+        "location": {
+            "address": "456 Trần Hưng Đạo, Hoàn Kiếm District",
+            "province": "Hà Nội",
+            "district": "Hoàn Kiếm"
+        },
+        "geolocation": {
+            "latitude": 21.028843,
+            "longitude": 105.850275
         },
         "images": [
             {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
+                "url": "https://example.com/image2.jpg",
+                "alt": "Hoàn Kiếm Pickleball Club Court"
             }
         ],
-        "position": {
-            "lat": 21.03012418271786,
-            "lng": 105.80565249826983
+        "feature": {
+            "lighting": true,
+            "indoor": false,
+            "canopy": true,
+            "rentThings": true,
+            "freeTrainer": true,
+            "others": [
+                {
+                    "key": "wifi",
+                    "value": "free"
+                }
+            ]
         }
     },
     {
-        "id": "65568798",
-        "name": "Sân Phú Mỹ",
-        "category": "maple",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
+        "_id": "66770348275ce2a3185df9d3",
+        "name": "HCMC Pickleball Arena",
+        "description": "Top-notch pickleball courts in Hồ Chí Minh City.",
+        "location": {
+            "address": "789 Nguyễn Huệ, District 1",
+            "province": "Hồ Chí Minh",
+            "district": "District 1"
+        },
+        "geolocation": {
+            "latitude": 10.773195,
+            "longitude": 106.703497
         },
         "images": [
             {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
+                "url": "https://example.com/image3.jpg",
+                "alt": "HCMC Pickleball Arena Court"
             }
         ],
-        "position": {
-            "lat": 10.78934567894532,
-            "lng": 106.70023456789123
+        "feature": {
+            "lighting": true,
+            "indoor": false,
+            "canopy": true,
+            "rentThings": false,
+            "freeTrainer": false,
+            "others": [
+                {
+                    "key": "lockerRoom",
+                    "value": "available"
+                }
+            ]
         }
     },
     {
-        "id": "342165",
-        "name": "Sân Định Công",
-        "category": "birch",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
+        "_id": "66770348275ce2a3185df9d4",
+        "name": "Đà Nẵng Pickleball Park",
+        "description": "Beautiful outdoor pickleball courts by the beach.",
+        "location": {
+            "address": "321 Võ Nguyên Giáp, Ngũ Hành Sơn",
+            "province": "Đà Nẵng",
+            "district": "Ngũ Hành Sơn"
+        },
+        "geolocation": {
+            "latitude": 16.047079,
+            "longitude": 108.237674
         },
         "images": [
             {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
+                "url": "https://example.com/image4.jpg",
+                "alt": "Đà Nẵng Pickleball Park Court"
             }
         ],
-        "position": {
-            "lat": 20.99562548003497,
-            "lng": 105.83740943804371
+        "feature": {
+            "lighting": true,
+            "indoor": false,
+            "canopy": false,
+            "rentThings": true,
+            "freeTrainer": true,
+            "others": [
+                {
+                    "key": "shower",
+                    "value": "available"
+                }
+            ]
         }
     },
     {
-        "id": "7696744",
-        "name": "Sân Tân Bình",
-        "category": "pine",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
+        "_id": "66770348275ce2a3185df9d5",
+        "name": "Hải Phòng Pickleball Community Center",
+        "description": "Community-focused pickleball courts.",
+        "location": {
+            "address": "654 Lê Lợi, Ngô Quyền",
+            "province": "Hải Phòng",
+            "district": "Ngô Quyền"
+        },
+        "geolocation": {
+            "latitude": 20.844911,
+            "longitude": 106.688083
         },
         "images": [
             {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
+                "url": "https://example.com/image5.jpg",
+                "alt": "Hải Phòng Pickleball Community Center Court"
             }
         ],
-        "position": {
-            "lat": 10.80342156789123,
-            "lng": 106.66234567891234
+        "feature": {
+            "lighting": true,
+            "indoor": true,
+            "canopy": true,
+            "rentThings": false,
+            "freeTrainer": false,
+            "others": [
+                {
+                    "key": "cafeteria",
+                    "value": "available"
+                }
+            ]
         }
     },
     {
-        "id": "12457689",
-        "name": "Sân Mỹ Đình",
-        "category": "cedar",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
+        "_id": "66770348275ce2a3185df9d6",
+        "name": "Phú Nhuận Pickleball Courts",
+        "description": "Conveniently located courts in Phú Nhuận District.",
+        "location": {
+            "address": "987 Phan Xích Long, Phú Nhuận District",
+            "province": "Hồ Chí Minh",
+            "district": "Phú Nhuận"
+        },
+        "geolocation": {
+            "latitude": 10.799891,
+            "longitude": 106.688123
         },
         "images": [
             {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
+                "url": "https://example.com/image6.jpg",
+                "alt": "Phú Nhuận Pickleball Courts"
             }
         ],
-        "position": {
-            "lat": 21.02872154684213,
-            "lng": 105.7823144580047
+        "feature": {
+            "lighting": true,
+            "indoor": false,
+            "canopy": true,
+            "rentThings": true,
+            "freeTrainer": true,
+            "others": [
+                {
+                    "key": "snackBar",
+                    "value": "available"
+                }
+            ]
         }
     },
     {
-        "id": "56659657",
-        "name": "Sân Thống Nhất",
-        "category": "ash",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
+        "_id": "66770348275ce2a3185df9d7",
+        "name": "Thanh Khê Pickleball Grounds",
+        "description": "Well-maintained courts in Đà Nẵng.",
+        "location": {
+            "address": "159 Nguyễn Văn Linh, Thanh Khê",
+            "province": "Đà Nẵng",
+            "district": "Thanh Khê"
+        },
+        "geolocation": {
+            "latitude": 16.067871,
+            "longitude": 108.220623
         },
         "images": [
             {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
+                "url": "https://example.com/image7.jpg",
+                "alt": "Thanh Khê Pickleball Grounds"
             }
         ],
-        "position": {
-            "lat": 10.77642156890234,
-            "lng": 106.68834567892345
+        "feature": {
+            "lighting": true,
+            "indoor": false,
+            "canopy": false,
+            "rentThings": true,
+            "freeTrainer": false,
+            "others": [
+                {
+                    "key": "wifi",
+                    "value": "available"
+                }
+            ]
         }
     },
     {
-        "id": "8798433",
-        "name": "Sân Tây Hồ",
-        "category": "oak",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
+        "_id": "66770348275ce2a3185df9d8",
+        "name": "Hạ Long Pickleball Club",
+        "description": "Scenic pickleball courts in Hạ Long.",
+        "location": {
+            "address": "123 Hùng Thắng, Hạ Long",
+            "province": "Quảng Ninh",
+            "district": "Hạ Long"
+        },
+        "geolocation": {
+            "latitude": 20.949319,
+            "longitude": 107.080601
         },
         "images": [
             {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
+                "url": "https://example.com/image8.jpg",
+                "alt": "Hạ Long Pickleball Club Court"
             }
         ],
-        "position": {
-            "lat": 21.05762158004115,
-            "lng": 105.8214144600347
+        "feature": {
+            "lighting": true,
+            "indoor": true,
+            "canopy": false,
+            "rentThings": true,
+            "freeTrainer": true,
+            "others": [
+                {
+                    "key": "parking",
+                    "value": "free"
+                }
+            ]
         }
     },
     {
-        "id": "76899443",
-        "name": "Sân Bình Thạnh",
-        "category": "maple",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
+        "_id": "66770348275ce2a3185df9d9",
+        "name": "Ngô Quyền Pickleball Courts",
+        "description": "Popular pickleball courts in Hải Phòng.",
+        "location": {
+            "address": "456 Lê Lợi, Ngô Quyền",
+            "province": "Hải Phòng",
+            "district": "Ngô Quyền"
+        },
+        "geolocation": {
+            "latitude": 20.844561,
+            "longitude": 106.688478
         },
         "images": [
             {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
+                "url": "https://example.com/image9.jpg",
+                "alt": "Ngô Quyền Pickleball Courts"
             }
         ],
-        "position": {
-            "lat": 10.80042157903412,
-            "lng": 106.7143456800045
+        "feature": {
+            "lighting": true,
+            "indoor": false,
+            "canopy": true,
+            "rentThings": true,
+            "freeTrainer": false,
+            "others": [
+                {
+                    "key": "cafe",
+                    "value": "available"
+                }
+            ]
         }
     },
     {
-        "id": "56983223",
-        "name": "Sân Long Biên",
-        "category": "birch",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
+        "_id": "66770348275ce2a3185df9da",
+        "name": "Hồ Chí Minh Sports Complex",
+        "description": "Extensive sports complex with pickleball courts.",
+        "location": {
+            "address": "789 Nguyễn Thị Minh Khai, District 3",
+            "province": "Hồ Chí Minh",
+            "district": "District 3"
+        },
+        "geolocation": {
+            "latitude": 10.776889,
+            "longitude": 106.688085
         },
         "images": [
             {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
+                "url": "https://example.com/image10.jpg",
+                "alt": "Hồ Chí Minh Sports Complex Court"
             }
         ],
-        "position": {
-            "lat": 21.04212156004117,
-            "lng": 105.8754144570347
-        }
-    },
-    {
-        "id": "65959232",
-        "name": "Sân Gò Vấp",
-        "category": "pine",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
-        },
-        "images": [
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            }
-        ],
-        "position": {
-            "lat": 10.82742156904523,
-            "lng": 106.6743456790045
-        }
-    },
-    {
-        "id": "67980934",
-        "name": "Sân Cầu Giấy",
-        "category": "cedar",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
-        },
-        "images": [
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            }
-        ],
-        "position": {
-            "lat": 21.02942154804116,
-            "lng": 105.7884144590047
-        }
-    },
-    {
-        "id": "60902322",
-        "name": "Sân Quận 1",
-        "category": "ash",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
-        },
-        "images": [
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            }
-        ],
-        "position": {
-            "lat": 10.77642157005623,
-            "lng": 106.70034567891234
-        }
-    },
-    {
-        "id": "65056563",
-        "name": "Sân Thanh Xuân",
-        "category": "oak",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
-        },
-        "images": [
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            }
-        ],
-        "position": {
-            "lat": 20.99862154704117,
-            "lng": 105.7994144550347
-        }
-    },
-    {
-        "id": "5403043",
-        "name": "Sân Thủ Đức",
-        "category": "maple",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
-        },
-        "images": [
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            }
-        ],
-        "position": {
-            "lat": 10.85042157904534,
-            "lng": 106.7603456790045
-        }
-    },
-    {
-        "id": "05604545",
-        "name": "Sân Ba Đình",
-        "category": "birch",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
-        },
-        "images": [
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            }
-        ],
-        "position": {
-            "lat": 21.03312154804117,
-            "lng": 105.8334144550347
-        }
-    },
-    {
-        "id": "94503432",
-        "name": "Sân Quận 3",
-        "category": "pine",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
-        },
-        "images": [
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            }
-        ],
-        "position": {
-            "lat": 10.77542156904534,
-            "lng": 106.6863456790045
-        }
-    },
-    {
-        "id": "56566578",
-        "name": "Sân Hoàn Kiếm",
-        "category": "cedar",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
-        },
-        "images": [
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            }
-        ],
-        "position": {
-            "lat": 21.02842154804117,
-            "lng": 105.8514144550347
-        }
-    },
-    {
-        "id": "023294354",
-        "name": "Sân Quận 7",
-        "category": "ash",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
-        },
-        "images": [
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            }
-        ],
-        "position": {
-            "lat": 10.73042156904545,
-            "lng": 106.7143456790045
-        }
-    },
-    {
-        "id": "34984398",
-        "name": "Sân Hai Bà Trưng",
-        "category": "oak",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "owner": {
-            "profile": "/vu9huy",
-            "name": "Quân Vũ",
-            "facebook": "https://www.facebook.com/vu9huy/",
-            "phone": "0359999999"
-        },
-        "images": [
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            },
-            {
-                "url": "/san-pickleball.jpeg",
-                "alt": "pickleball"
-            }
-        ],
-        "position": {
-            "lat": 21.01612154804117,
-            "lng": 105.8494144550347
+        "feature": {
+            "lighting": true,
+            "indoor": true,
+            "canopy": false,
+            "rentThings": true,
+            "freeTrainer": true,
+            "others": [
+                {
+                    "key": "parking",
+                    "value": "paid"
+                }
+            ]
         }
     }
 ]
