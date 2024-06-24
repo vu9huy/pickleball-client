@@ -5,7 +5,7 @@ import Footer from "@/components/footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "@/components/navbar/Navbar";
 import { dm_sans } from "./fonts/googleFont";
-import { keywords } from "@/metadata/universal/keywords";
+import { keywords } from "@/metadata/keywords";
 
 
 export const viewport = {

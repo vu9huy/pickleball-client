@@ -1,8 +1,10 @@
 # *
 User-agent: *
 Allow: /
-Disallow: /search?q=
+Disallow: /search?
 Disallow: /admin/
+Disallow: /login/
+Disallow: /404/
 
 # Host
 Host: https://www.sanpickleball.com
