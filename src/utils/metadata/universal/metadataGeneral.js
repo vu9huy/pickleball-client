@@ -1,3 +1,5 @@
+import { siteMetadata } from "@/data/metadata/siteMetadata";
+
 const DOMAIN = "https://sanpickleball.com";
 
 const metadataGeneralList = {
@@ -45,29 +47,35 @@ const metadataGeneralList = {
     }
 };
 
-export const getMetadataGeneral = (path) => {
+export const getMetadataFromPath = (path) => {
     if (!path) return null;
-    const metadataObj = metadataGeneralList[path];
+    const metadataObj = metadataGeneralList[path] || null;
+    return metadataObj;
+}
+
+
+export const getMetadataGeneral = ({ path, }) => {
+    const metadataObj = getMetadataFromPath(path);
     const metadata = {
-        title: metadataObj?.title,
-        description: metadataObj?.description,
+        title: metadataObj?.title || siteMetadata.title,
+        description: metadataObj?.description || siteMetadata.description,
         openGraph: {
             type: "website",
-            title: metadataObj?.title,
-            description: metadataObj?.description,
+            title: metadataObj?.title || siteMetadata.title,
+            description: metadataObj?.description || siteMetadata.description,
             url: `${DOMAIN}${metadataObj?.path}`,
-            locale: "vi_VN",
-            siteName: "Sân Pickleball",
-            images: metadataObj?.images
+            locale: siteMetadata.locale,
+            siteName: siteMetadata.siteName,
+            images: metadataObj?.images || siteMetadata.images
         },
         twitter: {
             card: "summary_large_image",
-            title: metadataObj?.title,
-            description: metadataObj?.description,
-            creator: "@vu9huy",
-            site: "@sanpickleball",
-            images: metadataObj?.images
-        },
+            title: metadataObj?.title || siteMetadata.title,
+            description: metadataObj?.description || siteMetadata.description,
+            creator: siteMetadata.creator,
+            site: siteMetadata.site,
+            images: metadataObj?.images || siteMetadata.images
+        }
     };
     return metadata;
 };
