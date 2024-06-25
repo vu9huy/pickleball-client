@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Logo.module.css";
-import "@/app/fonts/localFonts.css";
+import "@/fonts/localFonts.css";
 import Image from "next/image";
 import Link from "next/link";
 

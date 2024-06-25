@@ -6,7 +6,7 @@ import { GOOGLE_MAP_API_KEY, VIETNAME_REGION_CODE, VIETNAMESE_LANGUAGE_CODE } fr
 import VisglMap from "./visglMap/VisglMap";
 import "./VisglMapProvider.css";
 
-const VisglMapContainer = ({ viewState }) => {
+const VisglMapContainer = ({ viewState, courts }) => {
     return (
         <div className="visgl-map-provider">
             <APIProvider
@@ -15,7 +15,7 @@ const VisglMapContainer = ({ viewState }) => {
                 region={VIETNAME_REGION_CODE}
                 language={VIETNAMESE_LANGUAGE_CODE}
             >
-                <VisglMap viewState={viewState} />
+                <VisglMap viewState={viewState} courts={courts} />
             </APIProvider>
         </div>
     );

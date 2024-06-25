@@ -1,4 +1,16 @@
-.tim-san-container {}
+.tim-san-container {
+    padding: 20px;
+}
+
+.courts-number-container {
+    font-family: unknow-font, sans-serif;
+}
+
+.courts-number {
+    color: red;
+    font-weight: 600;
+    font-size: 20px;
+}
 
 .map-container {
     display: flex;

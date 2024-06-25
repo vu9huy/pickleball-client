@@ -8,8 +8,12 @@ for (let i = 0; i < courts.length; i++) {
 export async function loadCourtDataset() {
     // simulate loading the courts from an external source
     // return new Promise(resolve => {
-    //     setTimeout(() => resolve(courts), 500);
+    //     setTimeout(() => resolve(courts), 100);
     // });
+
+    // const response = await fetch("http://localhost:2704/v1/courts");
+    // const data = await response.json();
+    // const courts = data?.results;
     return courts;
 }
 

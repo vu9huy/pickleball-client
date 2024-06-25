@@ -4,7 +4,7 @@ import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "@/components/navbar/Navbar";
-import { dm_sans } from "./fonts/googleFont";
+import { dm_sans } from "../fonts/googleFont";
 import { siteMetadata } from "@/data/metadata/siteMetadata";
 import { keywords } from "@/metadata/keywords";
 

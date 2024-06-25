@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import styles from "./MobileLinkList.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { barlowCondensed } from "@/app/fonts/googleFont";
+import { barlowCondensed } from "@/fonts/googleFont";
 import { IconSprites1 } from "@/components/iconSprites/IconSprites";
 
 

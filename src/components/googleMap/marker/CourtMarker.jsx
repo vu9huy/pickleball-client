@@ -5,6 +5,11 @@ import Image from "next/image";
 export const CourtMarker = (props) => {
     const { court, onClick, setMarkerRef } = props;
 
+    const position = {
+        lat: court?.geolocation?.latitude,
+        lng: court?.geolocation?.longitude,
+    }
+
     const handleClick = useCallback(() => onClick(court), [onClick, court]);
     const ref = useCallback(
         (marker) =>
@@ -13,7 +18,7 @@ export const CourtMarker = (props) => {
     );
 
     return (
-        <AdvancedMarker position={court.position} ref={ref} onClick={handleClick}>
+        <AdvancedMarker position={position} ref={ref} onClick={handleClick}>
             <Image src="/images/logo-fit-96x96.png" alt="court marker" width={45} height={45} />
         </AdvancedMarker>
     );

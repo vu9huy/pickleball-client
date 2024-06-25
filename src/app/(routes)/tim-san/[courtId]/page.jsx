@@ -1,65 +1,69 @@
+
+import Link from "next/link";
 import styles from "./page.module.css";
+import ReactResponsiveCarousel from "@/components/slider/ReactResposiveCarousel";
+import { IconSprites1 } from "@/components/iconSprites/IconSprites";
 
 const BASE_API_ENDPOINT = "http://localhost:2704/v1"
 
-const getCourtData = async (courtId) => {
+const getCourtById = async (courtId) => {
     const data = await fetch(`${BASE_API_ENDPOINT}/courts/${courtId}`);
-    const post = await data.json();
-
-    return post;
+    const courts = await data.json();
+    return courts;
 };
 
 const CourtDetail = async ({ params: { courtId } }) => {
-
-    const court = await getCourtData(courtId);
-    console.log("court", court);
+    const court = await getCourtById(courtId);
 
     return (
         <div className={styles["court-detail-container"]}>
-            <div className={styles.header}>
-                <h1 className={styles.title}>{court.name}</h1>
-                <img src={court.images[0].url} alt={court.images[0].alt} className={styles.image} />
+            <div className={styles["court-detail-header"]}>
+                <h1 className={styles["court-detail-header-title"]}>{court.name}</h1>
             </div>
-            <p className={styles.description}>{court.description}</p>
-
-            <div className={styles.infoSection}>
-                <div className={styles.infoBlock}>
-                    <h2>Location</h2>
+            <div className={styles["court-detail-body"]}>
+                <div className={styles["court-detail-body-images"]}>
+                    <ReactResponsiveCarousel images={court.images} slideImageClass={"court-detail-slide"} isLazy={false} />
+                    {/* {court.images.map((image, index) => {
+                        return <Image key={index} src={image.url} alt={image.alt} fill />
+                    })} */}
+                </div>
+                <p className={styles["court-detail-body-description"]}>{court.description}</p>
+                <div className={styles["court-detail-body-infoBlock"]}>
+                    <h4><IconSprites1 id="sprites-icon-location" width="20px" height="20px" fill="#99de47" /> Địa chỉ</h4>
                     <p>{court.location.address}</p>
                     <p>{court.location.district}, {court.location.province}</p>
+                    <Link className={styles["court-detail-body-link"]} target="_blank" rel="noopener noreferrer nofollow" href={`https://maps.google.com/?q=${court?.geolocation?.latitude},${court?.geolocation?.longitude}`} passHref={true}>
+                        Xem trên google map
+                    </Link>
                 </div>
 
-                <div className={styles.infoBlock}>
-                    <h2>Geolocation</h2>
-                    <p>Latitude: {court.geolocation.latitude}</p>
-                    <p>Longitude: {court.geolocation.longitude}</p>
+                <div className={styles["court-detail-body-infoBlock"]}>
+                    <p>Số lượng sân: {court.numberOfCourts}</p>
                 </div>
 
-                <div className={styles.infoBlock}>
-                    <h2>Features</h2>
+                <div className={styles["court-detail-body-infoBlock"]}>
+                    <p>Thời gian mở cửa: {court.availability.openTime} - {court.availability.closeTime}</p>
+                </div>
+
+                <div className={styles["court-detail-body-infoBlock"]}>
+                    <h4><IconSprites1 id="sprites-icon-list" width="20px" height="20px" stroke="#99de47" fill="transparent" /> Dịch vụ</h4>
                     <ul>
-                        <li>Lighting: {court.feature.lighting ? 'Yes' : 'No'}</li>
-                        <li>Indoor: {court.feature.indoor ? 'Yes' : 'No'}</li>
-                        <li>Canopy: {court.feature.canopy ? 'Yes' : 'No'}</li>
-                        <li>Rent Things: {court.feature.rentThings ? 'Yes' : 'No'}</li>
-                        <li>Free Trainer: {court.feature.freeTrainer ? 'Yes' : 'No'}</li>
+                        <li>Chiếu sáng: {court.feature.lighting ? 'Yes' : 'No'}</li>
+                        <li>Trong nhà: {court.feature.indoor ? 'Yes' : 'No'}</li>
+                        <li>Mái che: {court.feature.canopy ? 'Yes' : 'No'}</li>
+                        <li>Cho thuê đồ: {court.feature.rentThings ? 'Yes' : 'No'}</li>
+                        <li>Hướng dẫn miễn phí: {court.feature.freeTrainer ? 'Yes' : 'No'}</li>
                     </ul>
                 </div>
 
-                <div className={styles.infoBlock}>
-                    <h2>Availability</h2>
-                    <p>Open Time: {court.availability.openTime}</p>
-                    <p>Close Time: {court.availability.closeTime}</p>
-                </div>
-
-                <div className={styles.infoBlock}>
-                    <h2>Booking Information</h2>
-                    <p>Price Per Hour: {court.bookingInfo.pricePerHour} VND</p>
-                </div>
-
-                <div className={styles.infoBlock}>
-                    <h2>Number of Courts</h2>
-                    <p>{court.numberOfCourts}</p>
+                <div className={styles["court-detail-body-infoBlock"]}>
+                    <h4><IconSprites1 id="sprites-icon-dollar" width="20px" height="20px" stroke="#99de47" fill="transparent" /> Giá</h4>
+                    <ul>
+                        <li>Ngày thường khung giờ 8h-16h:  {court.bookingInfo.pricePerHour}</li>
+                        <li>Ngày thường khung giờ 16h-23h:  {court.bookingInfo.pricePerHour}</li>
+                        <li>Cuối tuần khung giờ 8h-16h:  {court.bookingInfo.pricePerHour}</li>
+                        <li>Cuối tuần khung giờ 16h-23h:  {court.bookingInfo.pricePerHour}</li>
+                    </ul>
                 </div>
             </div>
         </div>

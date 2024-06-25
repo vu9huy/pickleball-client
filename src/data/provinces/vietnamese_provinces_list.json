@@ -1,5 +1,13 @@
 [
     {
+        "value": "",
+        "label": "Tất cả các tỉnh/thành",
+        "geolocation": {
+            "latitude": 21.028511,
+            "longitude": 105.804817
+        }
+    },
+    {
         "value": "Hà Nội",
         "label": "Hà Nội",
         "geolocation": {
@@ -7,6 +15,14 @@
             "longitude": 105.804817
         },
         "districts": [
+            {
+                "value": "",
+                "label": "Tất cả quận/huyện",
+                "geolocation": {
+                    "latitude": 21.028511,
+                    "longitude": 105.804817
+                }
+            },
             {
                 "value": "Ba Đình",
                 "label": "Ba Đình",
@@ -257,6 +273,14 @@
             "longitude": 106.629664
         },
         "districts": [
+            {
+                "value": "",
+                "label": "Tất cả quận/huyện",
+                "geolocation": {
+                    "latitude": 10.823099,
+                    "longitude": 106.629664
+                }
+            },
             {
                 "value": "Quận 1",
                 "label": "Quận 1",

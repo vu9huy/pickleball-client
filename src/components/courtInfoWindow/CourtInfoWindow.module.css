@@ -8,10 +8,11 @@
 
 .court-info-window-close-button {
     position: absolute;
-    top: 4px;
-    right: 8px;
+    top: 0px;
+    right: 0px;
     padding: 0px 4px;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 .court-info-window-close-button:hover {
@@ -26,7 +27,7 @@
 }
 
 .court-info-window-header {
-    padding: 8px 0px;
+    padding: 8px 20px 8px 0px;
 }
 
 .court-info-window-title {}
@@ -90,7 +91,11 @@
 }
 
 @media screen and (max-width: 768px) {
-    /* .court-info-window-container {
-        max-width: 400px;
-    } */
+    .court-info-window-container {
+        padding: 12px;
+    }
+
+    .court-info-window-body {
+        padding: 20px 8px 32px;
+    }
 }

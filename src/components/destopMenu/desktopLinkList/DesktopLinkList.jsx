@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./DesktopLinkList.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { barlowCondensed } from "@/app/fonts/googleFont";
+import { barlowCondensed } from "@/fonts/googleFont";
 
 
 const checkActiveNavLinkFunc = ({ linkPath, pathname }) => {

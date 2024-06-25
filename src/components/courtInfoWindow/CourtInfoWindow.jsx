@@ -4,8 +4,6 @@ import ReactResponsiveCarousel from "../slider/ReactResposiveCarousel";
 
 const CourtInfoWindow = ({ court, loading, handleInfoWindowClose, handleZoom }) => {
 
-    console.log("court", court);
-
     return (
         <div className={styles["court-info-window-container"]}>
             <div className={styles["court-info-window-close-button"]} onClick={handleInfoWindowClose}>
@@ -15,13 +13,12 @@ const CourtInfoWindow = ({ court, loading, handleInfoWindowClose, handleZoom }) 
                 <h2 className={styles["court-info-window-title"]}>{court.name}</h2>
             </div>
             <div className={styles["court-info-window-body"]}>
-                <Link className={styles["court-info-window-google-map-link"]} target="_blank" rel="noopener noreferrer " href={`/courts/${court.id}`} passHref={true}>
+                <Link className={styles["court-info-window-google-map-link"]} target="_blank" rel="noopener noreferrer " href={`/tim-san/${court.id}`} passHref={true}>
                     <button className={`${styles["court-info-window-go-to-court"]} button`}>Xem chi tiết</button>
-
                 </Link>
                 <p className={styles["court-info-window-description"]}>{court.description}</p>
                 <div className={styles["court-info-window-images-list"]}>
-                    <ReactResponsiveCarousel images={court.images} />
+                    <ReactResponsiveCarousel images={court.images} slideImageClass={"infowindow-slide"} isLazy={true} />
                 </div>
                 <Link className={styles["court-info-window-google-map-link"]} target="_blank" rel="noopener noreferrer nofollow" href={`https://maps.google.com/?q=${court?.position?.lat},${court?.position?.lng}`} passHref={true}>
                     Xem trên google map

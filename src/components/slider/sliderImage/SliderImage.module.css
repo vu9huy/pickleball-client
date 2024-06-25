@@ -15,14 +15,30 @@
     justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-    .infowindow-slide {
-        height: 140px;
-    }
-}
+/* .infowindow-slide .control-dots {
+    display: none;
+} */
+
 
 .slider-image {
     width: 100%;
     height: auto;
     object-fit: contain;
+}
+
+.court-detail-slide {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .infowindow-slide {
+        height: 140px;
+    }
+
+    .court-detail-slide {
+        height: 280px;
+    }
 }

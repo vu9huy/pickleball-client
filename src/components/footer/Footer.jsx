@@ -17,8 +17,8 @@ const Footer = () => {
                     </div>
                     <ul className={styles["footer-item-content"]}>
                         <li className={styles["footer-item-content-item"]}>
-                            Inissimos ducimos qui blandiitis praesentium voluptatum deleniti.
-                            {/* Tìm kiếm và đặt sân pickleball trên toàn quốc */}
+                            <p>Tìm kiếm và đặt sân</p>
+                            <p>pickleball trên toàn quốc</p>
                         </li>
                     </ul>
                 </div>
@@ -43,7 +43,7 @@ const Footer = () => {
                             </MoveHoverLink>
                         </li>
                         <li className={styles["footer-item-content-item"]}>
-                            <MoveHoverLink href={"mailto:quan2704vu@gmail.com"} label={"0352221999"} >
+                            <MoveHoverLink href={"tel:0352221999"} label={"0352221999"} >
                                 <span>0352221999</span>
                             </MoveHoverLink>
                         </li>

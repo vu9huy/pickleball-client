@@ -1,6 +1,5 @@
 [
     {
-        "_id": "66770348275ce2a3185df9d1",
         "name": "Hà Nội Pickleball Center",
         "description": "A modern pickleball center located in the heart of Hà Nội.",
         "location": {
@@ -12,9 +11,14 @@
             "latitude": 21.028511,
             "longitude": 105.848217
         },
+        "numberOfCourts": 4,
         "images": [
             {
-                "url": "https://example.com/image1.jpg",
+                "url": "/images/san-pickleball.webp",
+                "alt": "Hà Nội Pickleball Center Court"
+            },
+            {
+                "url": "/images/san-pickleball.webp",
                 "alt": "Hà Nội Pickleball Center Court"
             }
         ],
@@ -30,10 +34,10 @@
                     "value": "available"
                 }
             ]
-        }
+        },
+        "id": "66753f76984f2bab5799b028"
     },
     {
-        "_id": "66770348275ce2a3185df9d2",
         "name": "Hoàn Kiếm Pickleball Club",
         "description": "Friendly club with excellent facilities.",
         "location": {
@@ -45,9 +49,14 @@
             "latitude": 21.028843,
             "longitude": 105.850275
         },
+        "numberOfCourts": 2,
         "images": [
             {
-                "url": "https://example.com/image2.jpg",
+                "url": "/images/san-pickleball.webp",
+                "alt": "Hoàn Kiếm Pickleball Club Court"
+            },
+            {
+                "url": "/images/san-pickleball.webp",
                 "alt": "Hoàn Kiếm Pickleball Club Court"
             }
         ],
@@ -63,24 +72,29 @@
                     "value": "free"
                 }
             ]
-        }
+        },
+        "id": "66753f76984f2bab5799b029"
     },
     {
-        "_id": "66770348275ce2a3185df9d3",
         "name": "HCMC Pickleball Arena",
         "description": "Top-notch pickleball courts in Hồ Chí Minh City.",
         "location": {
             "address": "789 Nguyễn Huệ, District 1",
             "province": "Hồ Chí Minh",
-            "district": "District 1"
+            "district": "Quận 1"
         },
         "geolocation": {
             "latitude": 10.773195,
             "longitude": 106.703497
         },
+        "numberOfCourts": 3,
         "images": [
             {
-                "url": "https://example.com/image3.jpg",
+                "url": "/images/san-pickleball.webp",
+                "alt": "HCMC Pickleball Arena Court"
+            },
+            {
+                "url": "/images/san-pickleball.webp",
                 "alt": "HCMC Pickleball Arena Court"
             }
         ],
@@ -96,10 +110,10 @@
                     "value": "available"
                 }
             ]
-        }
+        },
+        "id": "66753f76984f2bab5799b02a"
     },
     {
-        "_id": "66770348275ce2a3185df9d4",
         "name": "Đà Nẵng Pickleball Park",
         "description": "Beautiful outdoor pickleball courts by the beach.",
         "location": {
@@ -111,9 +125,14 @@
             "latitude": 16.047079,
             "longitude": 108.237674
         },
+        "numberOfCourts": 5,
         "images": [
             {
-                "url": "https://example.com/image4.jpg",
+                "url": "/images/san-pickleball.webp",
+                "alt": "Đà Nẵng Pickleball Park Court"
+            },
+            {
+                "url": "/images/san-pickleball.webp",
                 "alt": "Đà Nẵng Pickleball Park Court"
             }
         ],
@@ -129,10 +148,10 @@
                     "value": "available"
                 }
             ]
-        }
+        },
+        "id": "66753f76984f2bab5799b02b"
     },
     {
-        "_id": "66770348275ce2a3185df9d5",
         "name": "Hải Phòng Pickleball Community Center",
         "description": "Community-focused pickleball courts.",
         "location": {
@@ -144,9 +163,14 @@
             "latitude": 20.844911,
             "longitude": 106.688083
         },
+        "numberOfCourts": 3,
         "images": [
             {
-                "url": "https://example.com/image5.jpg",
+                "url": "/images/san-pickleball.webp",
+                "alt": "Hải Phòng Pickleball Community Center Court"
+            },
+            {
+                "url": "/images/san-pickleball.webp",
                 "alt": "Hải Phòng Pickleball Community Center Court"
             }
         ],
@@ -162,10 +186,10 @@
                     "value": "available"
                 }
             ]
-        }
+        },
+        "id": "66753f76984f2bab5799b02c"
     },
     {
-        "_id": "66770348275ce2a3185df9d6",
         "name": "Phú Nhuận Pickleball Courts",
         "description": "Conveniently located courts in Phú Nhuận District.",
         "location": {
@@ -177,9 +201,14 @@
             "latitude": 10.799891,
             "longitude": 106.688123
         },
+        "numberOfCourts": 4,
         "images": [
             {
-                "url": "https://example.com/image6.jpg",
+                "url": "/images/san-pickleball.webp",
+                "alt": "Phú Nhuận Pickleball Courts"
+            },
+            {
+                "url": "/images/san-pickleball.webp",
                 "alt": "Phú Nhuận Pickleball Courts"
             }
         ],
@@ -195,10 +224,10 @@
                     "value": "available"
                 }
             ]
-        }
+        },
+        "id": "66753f76984f2bab5799b02d"
     },
     {
-        "_id": "66770348275ce2a3185df9d7",
         "name": "Thanh Khê Pickleball Grounds",
         "description": "Well-maintained courts in Đà Nẵng.",
         "location": {
@@ -210,9 +239,14 @@
             "latitude": 16.067871,
             "longitude": 108.220623
         },
+        "numberOfCourts": 3,
         "images": [
             {
-                "url": "https://example.com/image7.jpg",
+                "url": "/images/san-pickleball.webp",
+                "alt": "Thanh Khê Pickleball Grounds"
+            },
+            {
+                "url": "/images/san-pickleball.webp",
                 "alt": "Thanh Khê Pickleball Grounds"
             }
         ],
@@ -228,10 +262,10 @@
                     "value": "available"
                 }
             ]
-        }
+        },
+        "id": "66753f76984f2bab5799b02e"
     },
     {
-        "_id": "66770348275ce2a3185df9d8",
         "name": "Hạ Long Pickleball Club",
         "description": "Scenic pickleball courts in Hạ Long.",
         "location": {
@@ -243,9 +277,14 @@
             "latitude": 20.949319,
             "longitude": 107.080601
         },
+        "numberOfCourts": 4,
         "images": [
             {
-                "url": "https://example.com/image8.jpg",
+                "url": "/images/san-pickleball.webp",
+                "alt": "Hạ Long Pickleball Club Court"
+            },
+            {
+                "url": "/images/san-pickleball.webp",
                 "alt": "Hạ Long Pickleball Club Court"
             }
         ],
@@ -261,10 +300,10 @@
                     "value": "free"
                 }
             ]
-        }
+        },
+        "id": "66753f76984f2bab5799b02f"
     },
     {
-        "_id": "66770348275ce2a3185df9d9",
         "name": "Ngô Quyền Pickleball Courts",
         "description": "Popular pickleball courts in Hải Phòng.",
         "location": {
@@ -276,9 +315,14 @@
             "latitude": 20.844561,
             "longitude": 106.688478
         },
+        "numberOfCourts": 2,
         "images": [
             {
-                "url": "https://example.com/image9.jpg",
+                "url": "/images/san-pickleball.webp",
+                "alt": "Ngô Quyền Pickleball Courts"
+            },
+            {
+                "url": "/images/san-pickleball.webp",
                 "alt": "Ngô Quyền Pickleball Courts"
             }
         ],
@@ -294,24 +338,29 @@
                     "value": "available"
                 }
             ]
-        }
+        },
+        "id": "66753f76984f2bab5799b030"
     },
     {
-        "_id": "66770348275ce2a3185df9da",
         "name": "Hồ Chí Minh Sports Complex",
         "description": "Extensive sports complex with pickleball courts.",
         "location": {
             "address": "789 Nguyễn Thị Minh Khai, District 3",
             "province": "Hồ Chí Minh",
-            "district": "District 3"
+            "district": "Quận 3"
         },
         "geolocation": {
             "latitude": 10.776889,
             "longitude": 106.688085
         },
+        "numberOfCourts": 6,
         "images": [
             {
-                "url": "https://example.com/image10.jpg",
+                "url": "/images/san-pickleball.webp",
+                "alt": "Hồ Chí Minh Sports Complex Court"
+            },
+            {
+                "url": "/images/san-pickleball.webp",
                 "alt": "Hồ Chí Minh Sports Complex Court"
             }
         ],
@@ -327,6 +376,7 @@
                     "value": "paid"
                 }
             ]
-        }
+        },
+        "id": "66753f76984f2bab5799b031"
     }
 ]

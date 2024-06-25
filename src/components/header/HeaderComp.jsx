@@ -1,4 +1,4 @@
-import { barlowCondensed } from "@/app/fonts/googleFont";
+import { barlowCondensed } from "@/fonts/googleFont";
 
 export const HeaderComp = ({ children }) => {
 

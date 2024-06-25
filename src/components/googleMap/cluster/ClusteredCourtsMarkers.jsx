@@ -19,18 +19,16 @@ export const ClusteredCourtsMarkers = ({ map, courts, categories, setSelectedCat
         [courts, selectedCourtKey]
     );
 
-    // create the markerClusterer once the map is available and update it when
-    // the markers are changed
+    // create the markerClusterer once the map is available and update it when the markers are changed
     // const map = useMap();
     const clusterer = useMemo(() => {
         if (!map) return null;
-
         return new MarkerClusterer({ map });
     }, [map]);
 
+
     useEffect(() => {
         if (!clusterer) return;
-
         clusterer.clearMarkers();
         clusterer.addMarkers(Object.values(markers));
     }, [clusterer, markers]);
@@ -59,11 +57,11 @@ export const ClusteredCourtsMarkers = ({ map, courts, categories, setSelectedCat
         setSelectedCourtKey(court.key);
     }, []);
 
-    const handleZoom = (selectedCourt) => {
+    const handleZoomCourt = (selectedCourt) => {
         const coordinates = {
             // Cộng LAT_ZOOM_INFOWINDOW để zoom vào infowindow thay vì marker, nếu không cộng thì sẽ zoom vào marker và infowindow sẽ bị che mất
-            lat: selectedCourt?.position?.lat + LAT_ZOOM_INFOWINDOW,
-            lng: selectedCourt?.position?.lng
+            lat: selectedCourt?.geolocation?.latitude + LAT_ZOOM_INFOWINDOW,
+            lng: selectedCourt?.geolocation?.longitude
         };
         map.setCenter(coordinates);
         map.setZoom(COURT_ZOOM);
@@ -73,7 +71,7 @@ export const ClusteredCourtsMarkers = ({ map, courts, categories, setSelectedCat
         <>
             {courts.map(court => (
                 <CourtMarker
-                    key={court.key}
+                    key={court?.key || court?.id}
                     court={court}
                     onClick={handleMarkerClick}
                     setMarkerRef={setMarkerRef}
@@ -84,7 +82,7 @@ export const ClusteredCourtsMarkers = ({ map, courts, categories, setSelectedCat
                 markers={markers}
                 handleInfoWindowClose={handleInfoWindowClose}
                 selectedCourt={selectedCourt}
-                handleZoom={handleZoom}
+                handleZoomCourt={handleZoomCourt}
             />
             {/* <MarkerControlPanel
                 categories={categories}

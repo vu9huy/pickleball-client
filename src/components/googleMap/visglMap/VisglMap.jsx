@@ -16,15 +16,8 @@ const convertCurrentZoom = (viewState, COUNTRY_ZOOM) => {
     return result;
 };
 
-const VisglMap = ({ viewState }) => {
-
-    const [courts, setCourts] = useState(null);
+const VisglMap = ({ viewState, courts }) => {
     const [selectedCategory, setSelectedCategory] = useState(null);
-
-    // load data asynchronously
-    useEffect(() => {
-        loadCourtDataset().then(data => setCourts(data));
-    }, []);
 
     const map = useMap();
     const currentView = convertCurrentView(viewState, VIETNAME_CENTER_COORDINATES);

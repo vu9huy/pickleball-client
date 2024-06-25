@@ -1,9 +1,8 @@
 import CourtInfoWindow from "@/components/courtInfoWindow/CourtInfoWindow";
 import { InfoWindow } from "@vis.gl/react-google-maps";
 
-const VisglInfoWindow = ({ selectedCourtKey, markers, handleInfoWindowClose, selectedCourt, handleZoom }) => {
+const VisglInfoWindow = ({ selectedCourtKey, markers, handleInfoWindowClose, selectedCourt, handleZoomCourt }) => {
 
-    console.log("selectedCourt", selectedCourt);
 
     return (
         <>
@@ -12,7 +11,7 @@ const VisglInfoWindow = ({ selectedCourtKey, markers, handleInfoWindowClose, sel
                     anchor={markers[selectedCourtKey]}
                 // onCloseClick={handleInfoWindowClose}
                 >
-                    <CourtInfoWindow court={selectedCourt} handleZoom={handleZoom} handleInfoWindowClose={handleInfoWindowClose} />
+                    <CourtInfoWindow court={selectedCourt} handleZoom={handleZoomCourt} handleInfoWindowClose={handleInfoWindowClose} />
                 </InfoWindow>
             )}</>
     );
