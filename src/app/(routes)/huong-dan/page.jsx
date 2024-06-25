@@ -1,4 +1,4 @@
-import { getMetadataGeneral } from "@/utils/metadata/universal/metadataGeneral";
+import { getMetadataGeneral } from "@/metadata/metadataGeneral";
 import styles from "./page.module.css";
 
 

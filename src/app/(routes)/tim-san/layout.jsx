@@ -1,5 +1,5 @@
 
-import { getMetadataGeneral } from "@/utils/metadata/universal/metadataGeneral";
+import { getMetadataGeneral } from "@/metadata/metadataGeneral";
 
 // export async function generateMetadata() {
 //     const product = await fetch("https://jsonplaceholder.typicode.com/posts/1").then((res) => res.json());
