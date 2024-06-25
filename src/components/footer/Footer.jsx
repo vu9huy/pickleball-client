@@ -25,7 +25,7 @@ const Footer = () => {
                 <div className={styles["footer-item"]}>
                     <div className={styles["footer-item-title"]}>
                         <HeaderComp>
-                            <span>Liên hệ</span>
+                            <span>Liên hệ hợp tác</span>
                         </HeaderComp>
                     </div>
                     <ul className={styles["footer-item-content"]}>
@@ -39,14 +39,17 @@ const Footer = () => {
                         </li>
                         <li className={styles["footer-item-content-item"]}>
                             <MoveHoverLink href={"mailto:quan2704vu@gmail.com"} >
-                                <span>quan2704vu@gmail.com</span>
+                                <span className={styles["footer-item-social-wrapper"]}>
+                                    <IconSprites1 id="sprites-icon-gmail" className={styles["footer-item-social-icon"]} width="20px" height="20px" fill="#ffffff" />
+                                    quan2704vu@gmail.com
+                                </span>
                             </MoveHoverLink>
                         </li>
-                        <li className={styles["footer-item-content-item"]}>
+                        {/* <li className={styles["footer-item-content-item"]}>
                             <MoveHoverLink href={"tel:0352221999"} label={"0352221999"} >
                                 <span>0352221999</span>
                             </MoveHoverLink>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>

@@ -3,18 +3,22 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import ReactResponsiveCarousel from "@/components/slider/ReactResposiveCarousel";
 import { IconSprites1 } from "@/components/iconSprites/IconSprites";
+import NotFound from "@/components/notFound/NotFound";
 
-const BASE_API_ENDPOINT = "http://localhost:2704/v1"
+const BASE_API_ENDPOINT = "http://localhost:2704/v1";
 
 const getCourtById = async (courtId) => {
     const data = await fetch(`${BASE_API_ENDPOINT}/courts/${courtId}`);
+    if (data.status === 404) return null;
+    if (data.status !== 200) return null;
     const courts = await data.json();
     return courts;
 };
 
 const CourtDetail = async ({ params: { courtId } }) => {
     const court = await getCourtById(courtId);
-
+    console.log("court5554ytytyt", court);
+    if (!court) return <NotFound type={"court"} />;
     return (
         <div className={styles["court-detail-container"]}>
             <div className={styles["court-detail-header"]}>
@@ -48,11 +52,11 @@ const CourtDetail = async ({ params: { courtId } }) => {
                 <div className={styles["court-detail-body-infoBlock"]}>
                     <h4><IconSprites1 id="sprites-icon-list" width="20px" height="20px" stroke="#99de47" fill="transparent" /> Dịch vụ</h4>
                     <ul>
-                        <li>Chiếu sáng: {court.feature.lighting ? 'Yes' : 'No'}</li>
-                        <li>Trong nhà: {court.feature.indoor ? 'Yes' : 'No'}</li>
-                        <li>Mái che: {court.feature.canopy ? 'Yes' : 'No'}</li>
-                        <li>Cho thuê đồ: {court.feature.rentThings ? 'Yes' : 'No'}</li>
-                        <li>Hướng dẫn miễn phí: {court.feature.freeTrainer ? 'Yes' : 'No'}</li>
+                        <li>Chiếu sáng: {court.feature.lighting ? "Yes" : "No"}</li>
+                        <li>Trong nhà: {court.feature.indoor ? "Yes" : "No"}</li>
+                        <li>Mái che: {court.feature.canopy ? "Yes" : "No"}</li>
+                        <li>Cho thuê đồ: {court.feature.rentThings ? "Yes" : "No"}</li>
+                        <li>Hướng dẫn miễn phí: {court.feature.freeTrainer ? "Yes" : "No"}</li>
                     </ul>
                 </div>
 

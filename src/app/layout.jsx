@@ -1,12 +1,10 @@
 
 import "./globals.css";
-// import { DM_Sans } from "next/font/google";
 import Footer from "@/components/footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "@/components/navbar/Navbar";
 import { dm_sans } from "../fonts/googleFont";
 import { siteMetadata } from "@/data/metadata/siteMetadata";
-import { keywords } from "@/metadata/keywords";
 
 
 export const viewport = {
@@ -17,7 +15,7 @@ export const viewport = {
 export const metadata = {
     title: {
         default: siteMetadata.title,
-        template: `%s | ${siteMetadata.title}`,
+        template: `%s | ${siteMetadata.title}`
     },
     description: siteMetadata.description,
     keywords: siteMetadata.keywords,
@@ -80,11 +78,13 @@ export default function RootLayout({ children }) {
         <html lang="vi">
             <body className={dm_sans.className} >
                 <div className="container">
-                    <div className="wrapper">
-                        <Navbar />
-                        {children}
-                        <Footer />
+                    <Navbar />
+                    <div className="content-container">
+                        <div className="content-wrapper">
+                            {children}
+                        </div>
                     </div>
+                    <Footer />
                 </div>
             </body>
             <GoogleAnalytics gaId="G-XXXXXXXXXXXXX" />

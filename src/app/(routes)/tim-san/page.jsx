@@ -28,9 +28,9 @@ export default function TimSan() {
     // load data asynchronously
     const getCourtsData = async () => {
         const data = await loadCourtDataset();
-        const filteredCourts = filterCourtsByAddress({ data, province, district })
+        const filteredCourts = filterCourtsByAddress({ data, province, district });
         setCourts(filteredCourts);
-    }
+    };
 
     useEffect(() => {
         getCourtsData();
@@ -49,7 +49,7 @@ export default function TimSan() {
         };
         // select Tất cả các tỉnh/thành
         if (!provinceSelected.value) {
-            Object.assign(newViewState, { lat: VIETNAME_CENTER_COORDINATES.lat, lng: VIETNAME_CENTER_COORDINATES.lng, zoom: COUNTRY_ZOOM })
+            Object.assign(newViewState, { lat: VIETNAME_CENTER_COORDINATES.lat, lng: VIETNAME_CENTER_COORDINATES.lng, zoom: COUNTRY_ZOOM });
         }
         setViewState(newViewState);
     };
@@ -66,7 +66,7 @@ export default function TimSan() {
         };
         // select Tất cả các quận/huyện
         if (!districtSelected?.value) {
-            Object.assign(newViewState, { zoom: PROVINCE_ZOOM })
+            Object.assign(newViewState, { zoom: PROVINCE_ZOOM });
         }
         setViewState(newViewState);
     };

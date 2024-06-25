@@ -27,7 +27,7 @@ export const siteMetadata = {
         "pickleball là gì",
         "pickleball la gi"
     ],
-    locale: 'vi-VN',
+    locale: "vi-VN",
     author: "@vu9huy",
     creator: "@vu9huy",
     canonicalLink: "https://sanpickleball.com",
@@ -44,4 +44,4 @@ export const siteMetadata = {
         type: "image/x-icon"
     },
     applicationName: "Sân Pickleball"
-}
+};

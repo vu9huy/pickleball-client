@@ -51,10 +51,10 @@ export const getMetadataFromPath = (path) => {
     if (!path) return null;
     const metadataObj = metadataGeneralList[path] || null;
     return metadataObj;
-}
+};
 
 
-export const getMetadataGeneral = ({ path, }) => {
+export const getMetadataGeneral = ({ path }) => {
     const metadataObj = getMetadataFromPath(path);
     const metadata = {
         title: metadataObj?.title || siteMetadata.title,

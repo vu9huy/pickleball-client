@@ -7,8 +7,8 @@ export const CourtMarker = (props) => {
 
     const position = {
         lat: court?.geolocation?.latitude,
-        lng: court?.geolocation?.longitude,
-    }
+        lng: court?.geolocation?.longitude
+    };
 
     const handleClick = useCallback(() => onClick(court), [onClick, court]);
     const ref = useCallback(

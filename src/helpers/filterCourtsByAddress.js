@@ -5,5 +5,5 @@ const filterCourtsByAddress = ({ data, province, district }) => {
         if (province?.value && district?.value) return court?.location?.province === province?.value && court?.location?.district === district?.value;
     });
     return queryCourts;
-}
+};
 export default filterCourtsByAddress;

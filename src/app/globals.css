@@ -46,6 +46,19 @@ li {
     padding: 12px 12px;
 }
 
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.content-wrapper {
+    padding: 20px 0;
+    width: 100%;
+    max-width: var(--page-max-width);
+}
+
 /* .wrapper {
     max-width: 1536px;
     margin-left: auto;
