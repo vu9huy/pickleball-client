@@ -3,22 +3,37 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import ReactResponsiveCarousel from "@/components/slider/ReactResposiveCarousel";
 import { IconSprites1 } from "@/components/iconSprites/IconSprites";
-import NotFound from "@/components/notFound/NotFound";
+import NotFound from "@/components/error/notFound/NotFound";
+import ServerError from "@/components/error/serverError/ServerError";
 
 const BASE_API_ENDPOINT = "http://localhost:2704/v1";
 
+// const getCourtById = async (courtId) => {
+//     const data = await fetch(`${BASE_API_ENDPOINT}/courts/${courtId}`);
+//     if (data.status === 404) return null;
+//     if (data.status !== 200) return null;
+//     const courts = await data.json();
+//     return courts;
+// };
+
 const getCourtById = async (courtId) => {
-    const data = await fetch(`${BASE_API_ENDPOINT}/courts/${courtId}`);
-    if (data.status === 404) return null;
-    if (data.status !== 200) return null;
-    const courts = await data.json();
-    return courts;
+    try {
+        const data = await fetch(`${BASE_API_ENDPOINT}/courts/${courtId}`);
+        const courts = await data.json();
+        return courts;
+    } catch (error) {
+        console.log("getCourtById error", error);
+        return null;
+    }
 };
 
 const CourtDetail = async ({ params: { courtId } }) => {
     const court = await getCourtById(courtId);
-    console.log("court5554ytytyt", court);
-    if (!court) return <NotFound type={"court"} />;
+
+    const responseStatus = court?.code;
+    if (!court || responseStatus >= 500) return <ServerError />;
+    if (responseStatus === 404) return <NotFound type={"court"} />;
+
     return (
         <div className={styles["court-detail-container"]}>
             <div className={styles["court-detail-header"]}>
@@ -27,13 +42,13 @@ const CourtDetail = async ({ params: { courtId } }) => {
             <div className={styles["court-detail-body"]}>
                 <div className={styles["court-detail-body-images"]}>
                     <ReactResponsiveCarousel images={court.images} slideImageClass={"court-detail-slide"} isLazy={false} />
-                    {/* {court.images.map((image, index) => {
-                        return <Image key={index} src={image.url} alt={image.alt} fill />
-                    })} */}
                 </div>
                 <p className={styles["court-detail-body-description"]}>{court.description}</p>
-                <div className={styles["court-detail-body-infoBlock"]}>
-                    <h4><IconSprites1 id="sprites-icon-location" width="20px" height="20px" fill="#99de47" /> Địa chỉ</h4>
+                <div className={styles["court-detail-body-info-block"]}>
+                    <p className={styles["court-detail-body-info-block-label"]}>
+                        <IconSprites1 id="sprites-icon-location" width="20px" height="20px" fill="#99de47" />
+                        <span>Địa chỉ</span>
+                    </p>
                     <p>{court.location.address}</p>
                     <p>{court.location.district}, {court.location.province}</p>
                     <Link className={styles["court-detail-body-link"]} target="_blank" rel="noopener noreferrer nofollow" href={`https://maps.google.com/?q=${court?.geolocation?.latitude},${court?.geolocation?.longitude}`} passHref={true}>
@@ -41,16 +56,19 @@ const CourtDetail = async ({ params: { courtId } }) => {
                     </Link>
                 </div>
 
-                <div className={styles["court-detail-body-infoBlock"]}>
-                    <p>Số lượng sân: {court.numberOfCourts}</p>
+                <div className={styles["court-detail-body-info-block"]}>
+                    <p className={styles["court-detail-body-info-block-label"]}>Số lượng sân: {court.numberOfCourts}</p>
                 </div>
 
-                <div className={styles["court-detail-body-infoBlock"]}>
-                    <p>Thời gian mở cửa: {court.availability.openTime} - {court.availability.closeTime}</p>
+                <div className={styles["court-detail-body-info-block"]}>
+                    <p className={styles["court-detail-body-info-block-label"]}>Thời gian mở cửa: {court.availability.openTime} - {court.availability.closeTime}</p>
                 </div>
 
-                <div className={styles["court-detail-body-infoBlock"]}>
-                    <h4><IconSprites1 id="sprites-icon-list" width="20px" height="20px" stroke="#99de47" fill="transparent" /> Dịch vụ</h4>
+                <div className={styles["court-detail-body-info-block"]}>
+                    <p className={styles["court-detail-body-info-block-label"]}>
+                        <IconSprites1 id="sprites-icon-list" width="20px" height="20px" stroke="#99de47" fill="transparent" />
+                        <span>Dịch vụ</span>
+                    </p>
                     <ul>
                         <li>Chiếu sáng: {court.feature.lighting ? "Yes" : "No"}</li>
                         <li>Trong nhà: {court.feature.indoor ? "Yes" : "No"}</li>
@@ -60,8 +78,11 @@ const CourtDetail = async ({ params: { courtId } }) => {
                     </ul>
                 </div>
 
-                <div className={styles["court-detail-body-infoBlock"]}>
-                    <h4><IconSprites1 id="sprites-icon-dollar" width="20px" height="20px" stroke="#99de47" fill="transparent" /> Giá</h4>
+                <div className={styles["court-detail-body-info-block"]}>
+                    <p className={styles["court-detail-body-info-block-label"]}>
+                        <IconSprites1 id="sprites-icon-dollar" width="20px" height="20px" stroke="#99de47" fill="transparent" />
+                        <span>Giá</span>
+                    </p>
                     <ul>
                         <li>Ngày thường khung giờ 8h-16h:  {court.bookingInfo.pricePerHour}</li>
                         <li>Ngày thường khung giờ 16h-23h:  {court.bookingInfo.pricePerHour}</li>

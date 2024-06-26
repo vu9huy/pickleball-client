@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./NotFound.module.css";
+import { barlowCondensed } from "@/fonts/googleFont";
 
 const notFounds = {
     "default": {
@@ -28,7 +29,7 @@ const NotFound = ({ type }) => {
 
     return (
         <div className={styles["not-found-container"]}>
-            <p className={styles["not-found-banner"]}>404</p>
+            <p className={`${barlowCondensed.variable} ${styles["not-found-banner"]}`}>404</p>
             <p className={styles["not-found-text"]}>{notFoundData.text}</p>
             <Link href={`${notFoundData.buttonUrl}`}>
                 <button className={`${styles["not-found-button"]} button`}>{notFoundData.buttonText}</button>
