@@ -68,6 +68,16 @@
 
 .court-info-window-description {}
 
+.court-info-window-label {
+    font-weight: 600;
+}
+
+.court-info-window-available-time {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--primary-color)
+}
+
 .court-info-window-images-list {
     display: flex;
     flex-direction: row;

@@ -5,6 +5,7 @@ import ReactResponsiveCarousel from "@/components/slider/ReactResposiveCarousel"
 import { IconSprites1 } from "@/components/iconSprites/IconSprites";
 import NotFound from "@/components/error/notFound/NotFound";
 import ServerError from "@/components/error/serverError/ServerError";
+import { convertVietNameMoneyFormat } from "@/utils/convertMoneyFormat";
 
 const BASE_API_ENDPOINT = "http://localhost:2704/v1";
 
@@ -46,8 +47,8 @@ const CourtDetail = async ({ params: { courtId } }) => {
                 <p className={styles["court-detail-body-description"]}>{court.description}</p>
                 <div className={styles["court-detail-body-info-block"]}>
                     <p className={styles["court-detail-body-info-block-label"]}>
+                        <span>Địa chỉ&nbsp;</span>
                         <IconSprites1 id="sprites-icon-location" width="20px" height="20px" fill="#99de47" />
-                        <span>Địa chỉ</span>
                     </p>
                     <p>{court.location.address}</p>
                     <p>{court.location.district}, {court.location.province}</p>
@@ -66,28 +67,29 @@ const CourtDetail = async ({ params: { courtId } }) => {
 
                 <div className={styles["court-detail-body-info-block"]}>
                     <p className={styles["court-detail-body-info-block-label"]}>
+                        <span>Dịch vụ&nbsp;</span>
                         <IconSprites1 id="sprites-icon-list" width="20px" height="20px" stroke="#99de47" fill="transparent" />
-                        <span>Dịch vụ</span>
                     </p>
                     <ul>
-                        <li>Chiếu sáng: {court.feature.lighting ? "Yes" : "No"}</li>
-                        <li>Trong nhà: {court.feature.indoor ? "Yes" : "No"}</li>
-                        <li>Mái che: {court.feature.canopy ? "Yes" : "No"}</li>
-                        <li>Cho thuê đồ: {court.feature.rentThings ? "Yes" : "No"}</li>
-                        <li>Hướng dẫn miễn phí: {court.feature.freeTrainer ? "Yes" : "No"}</li>
+                        <li>Chiếu sáng: {court.feature.lighting ? "Có" : "Không"}</li>
+                        <li>Trong nhà: {court.feature.indoor ? "Có" : "Không"}</li>
+                        <li>Mái che: {court.feature.canopy ? "Có" : "Không"}</li>
+                        <li>Cho thuê đồ: {court.feature.rentThings ? "Có" : "Không"}</li>
+                        <li>Hướng dẫn miễn phí: {court.feature.freeTrainer ? "Có" : "Không"}</li>
+
                     </ul>
                 </div>
 
                 <div className={styles["court-detail-body-info-block"]}>
                     <p className={styles["court-detail-body-info-block-label"]}>
-                        <IconSprites1 id="sprites-icon-dollar" width="20px" height="20px" stroke="#99de47" fill="transparent" />
-                        <span>Giá</span>
+                        <span>Giá&nbsp;</span>
+                        <span className={styles["court-detail-body-info-block-fake-icon"]}>$</span>
                     </p>
                     <ul>
-                        <li>Ngày thường khung giờ 8h-16h:  {court.bookingInfo.pricePerHour}</li>
-                        <li>Ngày thường khung giờ 16h-23h:  {court.bookingInfo.pricePerHour}</li>
-                        <li>Cuối tuần khung giờ 8h-16h:  {court.bookingInfo.pricePerHour}</li>
-                        <li>Cuối tuần khung giờ 16h-23h:  {court.bookingInfo.pricePerHour}</li>
+                        <li>Ngày thường khung giờ 8h-16h:  {convertVietNameMoneyFormat(court.bookingInfo.pricePerHour)}đ</li>
+                        <li>Ngày thường khung giờ 16h-23h:  {convertVietNameMoneyFormat(court.bookingInfo.pricePerHour)}đ</li>
+                        <li>Cuối tuần khung giờ 8h-16h:  {convertVietNameMoneyFormat(court.bookingInfo.pricePerHour)}đ</li>
+                        <li>Cuối tuần khung giờ 16h-23h:  {convertVietNameMoneyFormat(court.bookingInfo.pricePerHour)}đ</li>
                     </ul>
                 </div>
             </div>

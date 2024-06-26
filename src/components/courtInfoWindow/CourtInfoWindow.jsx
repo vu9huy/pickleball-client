@@ -2,8 +2,8 @@ import styles from "./CourtInfoWindow.module.css";
 import Link from "next/link";
 import ReactResponsiveCarousel from "../slider/ReactResposiveCarousel";
 
-const CourtInfoWindow = ({ court, loading, handleInfoWindowClose, handleZoom }) => {
-
+const CourtInfoWindow = ({ court, handleInfoWindowClose, handleZoom }) => {
+    console.log("court", court);
     return (
         <div className={styles["court-info-window-container"]}>
             <div className={styles["court-info-window-close-button"]} onClick={handleInfoWindowClose}>
@@ -16,7 +16,18 @@ const CourtInfoWindow = ({ court, loading, handleInfoWindowClose, handleZoom }) 
                 <Link className={styles["court-info-window-google-map-link"]} target="_blank" rel="noopener noreferrer " href={`/tim-san/${court.id}`} passHref={true}>
                     <button className={`${styles["court-info-window-go-to-court"]} button`}>Xem chi tiết</button>
                 </Link>
-                <p className={styles["court-info-window-description"]}>{court.description}</p>
+                <p className={styles["court-info-window-description"]}>
+                    <span className={styles["court-info-window-label"]}>Mô tả: </span>
+                    <span>{court.description}</span>
+                </p>
+                <p className={styles["court-info-window-available"]}>
+                    <span className={styles["court-info-window-label"]}>Thời gian mở cửa: </span>
+                    <span className={styles["court-info-window-available-time"]}>{court.availability.openTime} - {court.availability.closeTime}</span>
+                </p>
+                <p className={styles["court-info-window-courts-number"]}>
+                    <span className={styles["court-info-window-label"]}>Số lượng sân: </span>
+                    <span>{court.numberOfCourts} sân</span>
+                </p>
                 <div className={styles["court-info-window-images-list"]}>
                     <ReactResponsiveCarousel images={court.images} slideImageClass={"infowindow-slide"} isLazy={true} />
                 </div>
