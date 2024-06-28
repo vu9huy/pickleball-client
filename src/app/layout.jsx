@@ -5,7 +5,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "@/components/navbar/Navbar";
 import { dm_sans } from "../fonts/googleFont";
 import { siteMetadata } from "@/data/metadata/siteMetadata";
-
+import SiteLinksSearchBoxSchemaComp from "@/components/structuredDataComp/SiteLinksSearchBoxSchemaComp";
+import FaqSchemaComp from "@/components/structuredDataComp/FAQSchemaComp";
 
 export const viewport = {
     width: "device-width",
@@ -73,9 +74,23 @@ export const metadata = {
     }
 };
 
+const faqHome = [
+    {
+        questionName: 'Pickleball là gì?',
+        acceptedAnswerText: '',
+    },
+    {
+        questionName: 'Cách chơi picklball?',
+        acceptedAnswerText: '',
+    },
+]
+
 export default function RootLayout({ children }) {
     return (
         <html lang="vi">
+            <SiteLinksSearchBoxSchemaComp />
+            <FaqSchemaComp faqData={faqHome} />
+
             <body className={dm_sans.className} >
                 <div className="container">
                     <Navbar />

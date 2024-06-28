@@ -1,29 +1,21 @@
 import Link from "next/link";
-import styles from "./NotFound.module.css";
+import styles from "./NotFoundComp.module.css";
 import { barlowCondensed } from "@/fonts/googleFont";
 
 const notFounds = {
     "default": {
-        image: {
-            url: "/",
-            alt: ""
-        },
         text: "Không tìm thấy trang",
         buttonText: "Trang chủ",
         buttonUrl: "/"
     },
     "court": {
-        image: {
-            url: "/",
-            alt: ""
-        },
         text: "Sân không tồn tại",
         buttonText: "Tìm sân",
         buttonUrl: "/tim-san"
     }
 };
 
-const NotFound = ({ type }) => {
+const NotFoundComp = ({ type }) => {
 
     const notFoundData = type ? notFounds[type] : notFounds["default"];
 
@@ -37,4 +29,4 @@ const NotFound = ({ type }) => {
         </div>
     );
 };
-export default NotFound;
+export default NotFoundComp;

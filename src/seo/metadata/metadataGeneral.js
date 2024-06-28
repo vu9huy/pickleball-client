@@ -1,6 +1,6 @@
+import { globalConfig } from "@/config/globalConfig";
 import { siteMetadata } from "@/data/metadata/siteMetadata";
 
-const DOMAIN = "https://sanpickleball.com";
 
 const metadataGeneralList = {
     "/": {
@@ -63,7 +63,7 @@ export const getMetadataGeneral = ({ path }) => {
             type: "website",
             title: metadataObj?.title || siteMetadata.title,
             description: metadataObj?.description || siteMetadata.description,
-            url: `${DOMAIN}${metadataObj?.path}`,
+            url: `https://${globalConfig.domain}${metadataObj?.path}`,
             locale: siteMetadata.locale,
             siteName: siteMetadata.siteName,
             images: metadataObj?.images || siteMetadata.images
@@ -75,6 +75,49 @@ export const getMetadataGeneral = ({ path }) => {
             creator: siteMetadata.creator,
             site: siteMetadata.site,
             images: metadataObj?.images || siteMetadata.images
+        }
+    };
+    return metadata;
+};
+
+
+/**
+ * @typedef {Object} Image
+ * @property {string} url 
+ * @property {string} alt 
+ * @property {number} width 
+ * @property {number} height 
+ */
+
+/**
+ * @typedef {Object} metadataObj
+ * @property {string} title
+ * @property {string} description
+ * @property {Image[]} images
+ * @property {string} path
+ */
+
+export const getMetadataSpecific = (metadataObj) => {
+    const { title, description, images, path } = metadataObj;
+    const metadata = {
+        title: title || siteMetadata.title,
+        description: description || siteMetadata.description,
+        openGraph: {
+            type: "website",
+            title: title || siteMetadata.title,
+            description: description || siteMetadata.description,
+            url: `https://${globalConfig.domain}${path}`,
+            locale: siteMetadata.locale,
+            siteName: siteMetadata.siteName,
+            images: images || siteMetadata.images
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: title || siteMetadata.title,
+            description: description || siteMetadata.description,
+            creator: siteMetadata.creator,
+            site: siteMetadata.site,
+            images: images || siteMetadata.images
         }
     };
     return metadata;

@@ -1,5 +1,7 @@
-export const GOOGLE_MAP_MAP_ID = process.env.NEXT_PUBLIC_GOOGLE_MAP_ID;
-export const GOOGLE_MAP_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY;
+import { globalConfig } from "@/config/globalConfig";
+
+export const GOOGLE_MAP_MAP_ID = globalConfig.googleMapId;
+export const GOOGLE_MAP_API_KEY = globalConfig.googleMapApiKey;
 export const VIETNAME_REGION_CODE = "VN";
 export const VIETNAMESE_LANGUAGE_CODE = "vi";
 export const VIETNAME_BOUND = {

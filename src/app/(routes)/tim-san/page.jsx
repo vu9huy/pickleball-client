@@ -10,6 +10,13 @@ import { loadCourtDataset } from "@/data/courts/courts";
 import filterCourtsByAddress from "@/helpers/filterCourtsByAddress";
 import { COUNTRY_ZOOM, DISTRICT_ZOOM, PROVINCE_ZOOM, VIETNAME_CENTER_COORDINATES } from "@/components/googleMap/constants/VisglMapConstant";
 
+// load data asynchronously
+const getCourtsData = async ({ province, district, setCourts }) => {
+    const data = await loadCourtDataset();
+    const filteredCourts = filterCourtsByAddress({ data, province, district });
+    setCourts(filteredCourts);
+};
+
 export default function TimSan() {
     // const [geolocation, setGeolocation] = useState({});
 
@@ -24,16 +31,8 @@ export default function TimSan() {
         zoom: null
     });
 
-
-    // load data asynchronously
-    const getCourtsData = async () => {
-        const data = await loadCourtDataset();
-        const filteredCourts = filterCourtsByAddress({ data, province, district });
-        setCourts(filteredCourts);
-    };
-
     useEffect(() => {
-        getCourtsData();
+        getCourtsData({ province, district, setCourts });
     }, [province, district]);
 
     const selectProvince = (provinceSelected) => {
@@ -51,6 +50,7 @@ export default function TimSan() {
         if (!provinceSelected.value) {
             Object.assign(newViewState, { lat: VIETNAME_CENTER_COORDINATES.lat, lng: VIETNAME_CENTER_COORDINATES.lng, zoom: COUNTRY_ZOOM });
         }
+
         setViewState(newViewState);
     };
 
@@ -68,6 +68,7 @@ export default function TimSan() {
         if (!districtSelected?.value) {
             Object.assign(newViewState, { zoom: PROVINCE_ZOOM });
         }
+
         setViewState(newViewState);
     };
 

@@ -3,37 +3,18 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import ReactResponsiveCarousel from "@/components/slider/ReactResposiveCarousel";
 import { IconSprites1 } from "@/components/iconSprites/IconSprites";
-import NotFound from "@/components/error/notFound/NotFound";
+import NotFoundComp from "@/components/error/notFound/NotFoundComp";
 import ServerError from "@/components/error/serverError/ServerError";
 import { convertVietNameMoneyFormat } from "@/utils/convertMoneyFormat";
+import { getCourtByIdApi } from "@/api/callApi";
 
-const BASE_API_ENDPOINT = "http://localhost:2704/v1";
-
-// const getCourtById = async (courtId) => {
-//     const data = await fetch(`${BASE_API_ENDPOINT}/courts/${courtId}`);
-//     if (data.status === 404) return null;
-//     if (data.status !== 200) return null;
-//     const courts = await data.json();
-//     return courts;
-// };
-
-const getCourtById = async (courtId) => {
-    try {
-        const data = await fetch(`${BASE_API_ENDPOINT}/courts/${courtId}`);
-        const courts = await data.json();
-        return courts;
-    } catch (error) {
-        console.log("getCourtById error", error);
-        return null;
-    }
-};
 
 const CourtDetail = async ({ params: { courtId } }) => {
-    const court = await getCourtById(courtId);
+    const court = await getCourtByIdApi(courtId);
 
     const responseStatus = court?.code;
     if (!court || responseStatus >= 500) return <ServerError />;
-    if (responseStatus === 404) return <NotFound type={"court"} />;
+    if (responseStatus === 404) return <NotFoundComp type={"court"} />;
 
     return (
         <div className={styles["court-detail-container"]}>
@@ -49,16 +30,16 @@ const CourtDetail = async ({ params: { courtId } }) => {
                     <p className={styles["court-detail-body-info-block-label"]}>
                         <span>Địa chỉ&nbsp;</span>
                         <IconSprites1 id="sprites-icon-location" width="20px" height="20px" fill="#99de47" />
+                        <span>:</span>
                     </p>
-                    <p>{court.location.address}</p>
-                    <p>{court.location.district}, {court.location.province}</p>
+                    <p>{court.location.address}, {court.location.district}, {court.location.province}</p>
                     <Link className={styles["court-detail-body-link"]} target="_blank" rel="noopener noreferrer nofollow" href={`https://maps.google.com/?q=${court?.geolocation?.latitude},${court?.geolocation?.longitude}`} passHref={true}>
                         Xem trên google map
                     </Link>
                 </div>
 
                 <div className={styles["court-detail-body-info-block"]}>
-                    <p className={styles["court-detail-body-info-block-label"]}>Số lượng sân: {court.numberOfCourts}</p>
+                    <p className={styles["court-detail-body-info-block-label"]}>Số lượng sân: {court.numberOfCourts} sân</p>
                 </div>
 
                 <div className={styles["court-detail-body-info-block"]}>
