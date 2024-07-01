@@ -17,10 +17,10 @@ export default function ProductSchemaComp({ productData }) {
             aggregateRating={aggregateRating}
             aggregateOffer={{
                 lowPrice: lowPrice,
-                priceCurrency: 'VND',
-                priceValidUntil: '2030-01-01',
-                itemCondition: 'https://schema.org/NewCondition',
-                availability: 'https://schema.org/InStock',
+                priceCurrency: "VND",
+                priceValidUntil: "2030-01-01",
+                itemCondition: "https://schema.org/NewCondition",
+                availability: "https://schema.org/InStock",
                 url: { url }
             }}
         />

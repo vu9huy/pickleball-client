@@ -10,11 +10,11 @@ const SiteLinksSearchBoxSchemaComp = ({ }) => {
             potentialActions={[
                 {
                     target: `https://${globalConfig.domain}/search?q`,
-                    queryInput: 'search_term_string',
+                    queryInput: "search_term_string"
                 }
             ]}
         />
-    )
-}
+    );
+};
 
 export default SiteLinksSearchBoxSchemaComp;

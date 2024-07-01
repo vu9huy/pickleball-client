@@ -76,14 +76,14 @@ export const metadata = {
 
 const faqHome = [
     {
-        questionName: 'Pickleball là gì?',
-        acceptedAnswerText: '',
+        questionName: "Pickleball là gì?",
+        acceptedAnswerText: ""
     },
     {
-        questionName: 'Cách chơi picklball?',
-        acceptedAnswerText: '',
-    },
-]
+        questionName: "Cách chơi picklball?",
+        acceptedAnswerText: ""
+    }
+];
 
 export default function RootLayout({ children }) {
     return (

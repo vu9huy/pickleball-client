@@ -1,4 +1,4 @@
-import { FAQPageJsonLd } from 'next-seo';
+import { FAQPageJsonLd } from "next-seo";
 
 const FaqSchemaComp = ({ faqData }) => {
 
@@ -7,7 +7,7 @@ const FaqSchemaComp = ({ faqData }) => {
             useAppDir={true}
             mainEntity={faqData}
         />
-    )
+    );
 };
 
 export default FaqSchemaComp;

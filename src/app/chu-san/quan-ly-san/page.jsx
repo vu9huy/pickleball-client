@@ -8,7 +8,7 @@ const QuanLySan = () => {
         <div className={styles["quan-ly-san-container"]}>
             <CourtForm />
         </div>
-    )
+    );
 };
 
 export default QuanLySan;

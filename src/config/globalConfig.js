@@ -6,4 +6,4 @@ export const globalConfig = {
     googleMapId: process.env.NEXT_PUBLIC_GOOGLE_MAP_ID,
     googleMapApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY,
     mapboxApiKey: process.env.NEXT_PUBLIC_MAPBOX_API_KEY
-}
+};

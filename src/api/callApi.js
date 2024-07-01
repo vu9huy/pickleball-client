@@ -13,4 +13,4 @@ const getCourtByIdApi = async (courtId) => {
 
 export {
     getCourtByIdApi
-}
+};

@@ -11,15 +11,15 @@ export async function generateMetadata({ params: { courtId } }) {
             url: image.url,
             alt: image.alt,
             width: 1200,
-            height: 630,
-        }
-    })
+            height: 630
+        };
+    });
     const metadataObj = {
         title: court.name,
         description: court.description,
         images: images,
         path: `/tim-san/${court.id}`
-    }
+    };
     return getMetadataSpecific(metadataObj);
 }
 
@@ -36,13 +36,13 @@ export default async function CourtDetailLayout({ children, params: { courtId } 
             name: court.name,
             item: `https://${globalConfig.domain}/tim-san/${court.id}`
         }
-    ]
+    ];
 
     const images = court.images.map(image => image.url);
     const fakeAggregateRating = {
-        ratingValue: '4.8',
-        reviewCount: '12',
-    }
+        ratingValue: "4.8",
+        reviewCount: "12"
+    };
 
     const productData = {
         name: court.name,
@@ -52,7 +52,7 @@ export default async function CourtDetailLayout({ children, params: { courtId } 
         aggregateRating: fakeAggregateRating,
         url: `https://${globalConfig.domain}/tim-san/${court.id}`,
         lowPrice: court.bookingInfo?.averagePrice || "100000"
-    }
+    };
 
     return (
         <>

@@ -4,14 +4,33 @@
     gap: 16px;
 }
 
+.court-form-field {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: ; */
+}
+
+.court-form-label {
+    display: inline-block;
+    width: 100px;
+}
+
 .court-form-input {
     padding: 8px;
     border-radius: 4px;
+    width: 100%;
+}
+
+.court-form-textarea {
+    resize: vertical;
+    width: 100%;
+    padding: 8px;
 }
 
 .error-messsage {
     color: red;
-    font-size: 12px;
+    font-size: 14px;
+    padding-top: 6px;
 }
 
 .court-form-submit {}

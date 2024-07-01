@@ -9,8 +9,8 @@ export default function BreadcrumbSchemaComp({ listElements }) {
             itemListElements={[
                 {
                     position: 1,
-                    name: 'Home',
-                    item: globalConfig.websiteUrl,
+                    name: "Home",
+                    item: globalConfig.websiteUrl
                 },
                 ...listElements
             ]}

@@ -83,10 +83,10 @@ export const getMetadataGeneral = ({ path }) => {
 
 /**
  * @typedef {Object} Image
- * @property {string} url 
- * @property {string} alt 
- * @property {number} width 
- * @property {number} height 
+ * @property {string} url
+ * @property {string} alt
+ * @property {number} width
+ * @property {number} height
  */
 
 /**

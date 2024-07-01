@@ -13,7 +13,7 @@ const ArticleSchemaComp = ({ blogData }) => {
             dateModified={dateModified}
             authorName="Quân Vũ"
         />
-    )
-}
+    );
+};
 
 export default ArticleSchemaComp;
