@@ -88,8 +88,10 @@ const faqHome = [
 export default function RootLayout({ children }) {
     return (
         <html lang="vi">
-            <SiteLinksSearchBoxSchemaComp />
-            <FaqSchemaComp faqData={faqHome} />
+            <head>
+                <SiteLinksSearchBoxSchemaComp />
+                <FaqSchemaComp faqData={faqHome} />
+            </head>
 
             <body className={dm_sans.className} >
                 <div className="container">
