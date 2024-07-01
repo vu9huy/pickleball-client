@@ -3,7 +3,6 @@ import Link from "next/link";
 import ReactResponsiveCarousel from "../slider/ReactResposiveCarousel";
 
 const CourtInfoWindow = ({ court, handleInfoWindowClose, handleZoom }) => {
-    console.log("court", court);
     return (
         <div className={styles["court-info-window-container"]}>
             <div className={styles["court-info-window-close-button"]} onClick={handleInfoWindowClose}>

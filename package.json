@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@googlemaps/markerclusterer": "^2.5.3",
+    "@hookform/error-message": "^2.0.1",
     "@next/third-parties": "^14.2.3",
     "@tanstack/react-query": "^5.45.1",
     "@vis.gl/react-google-maps": "^1.0.2",
@@ -20,6 +21,7 @@
     "next-seo": "^6.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.52.0",
     "react-map-gl": "^7.1.7",
     "react-responsive-carousel": "^3.2.23",
     "react-select": "^5.8.0",

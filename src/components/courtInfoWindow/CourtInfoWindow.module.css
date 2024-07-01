@@ -42,6 +42,7 @@
     max-height: 300px;
     gap: 12px;
     padding: 16px 8px;
+    overscroll-behavior: contain;
 }
 
 .court-info-window-body::-webkit-scrollbar {

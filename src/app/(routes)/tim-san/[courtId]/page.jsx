@@ -50,6 +50,7 @@ const CourtDetail = async ({ params: { courtId } }) => {
                     <p className={styles["court-detail-body-info-block-label"]}>
                         <span>Dịch vụ&nbsp;</span>
                         <IconSprites1 id="sprites-icon-list" width="20px" height="20px" stroke="#99de47" fill="transparent" />
+                        <span>:</span>
                     </p>
                     <ul>
                         <li>Chiếu sáng: {court.feature.lighting ? "Có" : "Không"}</li>
@@ -65,6 +66,7 @@ const CourtDetail = async ({ params: { courtId } }) => {
                     <p className={styles["court-detail-body-info-block-label"]}>
                         <span>Giá&nbsp;</span>
                         <span className={styles["court-detail-body-info-block-fake-icon"]}>$</span>
+                        <span>:</span>
                     </p>
                     <ul>
                         <li>Ngày thường khung giờ 8h-16h:  {convertVietNameMoneyFormat(court.bookingInfo.pricePerHour)}đ</li>
