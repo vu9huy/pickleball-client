@@ -1,8 +1,9 @@
 "use client";
 
 import { ErrorMessage } from "@hookform/error-message";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import styles from "./CourtForm.module.css";
+import Select from 'react-select';
 
 const inputs = [
     {
@@ -45,12 +46,21 @@ const CourtForm = () => {
     const {
         register,
         formState: { errors },
-        handleSubmit
+        handleSubmit,
+        control
     } = useForm({
         criteriaMode: "all"
     });
-
     const onSubmit = (data) => console.log("data", data);
+
+
+    const options = [
+        { value: '1', label: 'Apple' },
+        { value: '2', label: 'Ball' },
+        { value: '3', label: 'Cat' },
+    ];
+
+    const default_value = 1;
 
     return (
         <form className={styles["court-form-container"]} onSubmit={handleSubmit(onSubmit)}>
@@ -77,7 +87,22 @@ const CourtForm = () => {
                     />
                 </div>)
             })}
-
+            <Controller
+                control={control}
+                defaultValue={default_value}
+                name="field_name_product"
+                render={({ onChange, value, name, ref }) => {
+                    console.log("onChange", onChange);
+                    return <Select
+                        inputRef={ref}
+                        classNamePrefix="addl-class"
+                        options={options}
+                        value={options.find(c => c.value === value)}
+                        // onChange={val => onChange(val.value)}
+                        onChange={val => console.log("rfhjrejk")}
+                    />
+                }}
+            />
             <input className={`${styles["court-form-submit"]} button`} type="submit" />
         </form>
     );
